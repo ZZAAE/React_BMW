@@ -3,21 +3,10 @@ import { ReviewList } from "../components/ReviewList";
 import { dummyReviews } from "../hooks/dummyReviews";
 
 const AllReviews = () => {
-    const [type, setType] = useState("all")
     const [sortedData, setSortedData] = useState(dummyReviews);
 
     const setOrderType = (value) => {
-        setType(value);
-
-        if (type === "all") {
-            setSortedData(dummyReviews)
-        }
-        else if (type === "movie") {
-            setSortedData(dummyReviews.filter((item) => item.media_type === type))
-        }
-        else if (type === "book") {
-            setSortedData(dummyReviews.filter((item) => item.media_type === type))
-        }
+        setSortedData(value === "all" ? dummyReviews : dummyReviews.filter((item) => item.media_type === value) )
     }
 
     return (
