@@ -32,24 +32,11 @@ const Nav_Bar = () => {
                 </button>
             </div>
             <div className="">
-<<<<<<< HEAD
-                <button ref={cursorRef} onClick={() => nav("/Moive")}>
-                    Moive
-                </button>
-            </div>
-            <div className="">
-                <button ref={cursorRef} onClick={() => nav("/Book")}>
-                    Book
-                </button>
-            </div>
-            <div className="">
-=======
                 <button ref={cursorRef} onClick={() => nav("/AllReviews")}>
                     AllReviews
                 </button>
             </div>
             <div className="">
->>>>>>> origin/ReviewList
                 <button ref={cursorRef} onClick={() => nav("/HashTag")}>
                     HashTag
                 </button>
