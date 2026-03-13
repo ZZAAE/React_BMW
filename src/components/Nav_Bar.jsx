@@ -16,12 +16,12 @@ const Nav_Bar = () => {
     useEffect(() => {
         const path = location.pathname;
 
-        if (path === "/") homeRef.current?.focus();
+        if (path === "/Home") homeRef.current?.focus();
         else if (path === "/write") writeRef.current?.focus();
         else if (path === "/Moive") moiveRef.current?.focus();
         else if (path === "/Book") bookRef.current?.focus();
         else if (path === "/HashTag") hashtagRef.current?.focus();
-        else if (path === "/Util") hashtagRef.current?.focus();
+        else if (path === "/Util") utilRef.current?.focus();
 
     }, [location.pathname]);
 
