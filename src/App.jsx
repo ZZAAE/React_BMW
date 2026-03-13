@@ -5,6 +5,7 @@ import AllReviews from './pages/AllReviews'
 import Home from './pages/Home'
 import Write from './pages/Write'
 import Hashtag from './pages/Hashtag'
+import Util from './pages/Util'
 import { useState } from 'react'
 import { dummyReviews } from './hooks/dummyReviews'
 
@@ -18,13 +19,15 @@ function App() {
     <BrowserRouter>
       <Nav_Bar/>
       
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Write" element={<Write ReviewData={ReviewData} setReviewData={setReviewData} ReviewInfo={ReviewInfo} setReviewInfo={setReviewInfo}/>} />
-        <Route path="/AllReviews" element={<AllReviews />} />
-        <Route path="/Hashtag" element={<Hashtag />} />
-      </Routes>
-
+      <div className="page-content">   {/* 추가 */}
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Write" element={<Write ReviewData={ReviewData} setReviewData={setReviewData} ReviewInfo={ReviewInfo} setReviewInfo={setReviewInfo}/>} />
+            <Route path="/AllReviews" element={<AllReviews />} />
+            <Route path="/Hashtag" element={<Hashtag />} />
+            <Route path="/Util" element={<Util />} />
+        </Routes>
+    </div>
     </BrowserRouter>
   )
 }

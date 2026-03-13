@@ -1,0 +1,68 @@
+:root {
+    --color-dark-brown: #584635;
+    --color-dark-gray: #3C3C3C;
+    --color-light-beige: #DBC9B8;
+    --color-white: #FFFFFF;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px; /* 80px → 120px */
+    height: 100vh;
+    background-color: var(--color-light-beige);
+    padding: 28px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.nav-menus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    color: var(--color-dark-brown);
+    background-color: transparent;
+}
+
+.nav-btn svg {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-btn img {
+    width: 26px;
+    height: 26px;
+    
+}
+
+/* 활성화 시 배경 제거, 색상만 변경 */
+.nav-btn.active {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--color-dark-gray);
+    background-color: var(--color-white);
+}
+
+/* 호버도 배경 제거 */
+.nav-btn:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    border: none;
+}
