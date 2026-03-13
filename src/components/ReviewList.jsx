@@ -1,16 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { useReviewList } from "../util/useReviewList";
-import { dummyReviews } from "../hooks/dummyReviews";
+// import { useReviewList } from "../util/useReviewList";
 
-export const ReviewList = ({type}) => {
+export const ReviewList = ({data}) => {
     const navigate = useNavigate();
 
-    const sortedData = useReviewList.sortedData(dummyReviews, {type});
+    // const sortedData = useReviewList.sortedData(dummyReviews, {type});
 
     return (
         <div>
             <divider />
-            {sortedData.map((item) => (
+            {data.map((item) => (
                 <button key={item.id} onClick={() => navigate(`/review/${item.id}`)}>
                     <h3>{item.media_info.title}</h3>
                     <img src={item.image} alt={item.title} />

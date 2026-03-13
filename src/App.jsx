@@ -17,7 +17,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Write" element={<Write />} />
         <Route path="/AllReviews" element={<AllReviews />} />
-        <Route path="/Write" element={<Write />} />
         <Route path="/Hashtag" element={<Hashtag />} />
       </Routes>
 
