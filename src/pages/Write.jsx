@@ -2,13 +2,18 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BtnSearch from "../components/BtnSearch";
 
-const Write = ({ ReviewData, setReviewData, ReviewInfo , setReviewInfo}) => {
+const Write = ({ ReviewData, setReviewData }) => {
 
+
+    const [ReviewInfo, setReviewInfo] = useState(null);
     const nav = useNavigate();
     const ReviewId = useRef(ReviewData.length);
     const reviewInfo = ReviewInfo;
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState("");
+
+    console.log(reviewInfo);
+    
 
     const selectTag = (review) => {
 
@@ -56,14 +61,23 @@ const Write = ({ ReviewData, setReviewData, ReviewInfo , setReviewInfo}) => {
 
         setReviewData(prev => [...prev, addNewData]);
 
-        nav("/", {replace: true});
+        nav("/", { replace: true });
     };
 
 
     return (
         <div>
             <div>
-                <BtnSearch setReviewInfo={setReviewInfo}/>
+                {!reviewInfo ? (
+                    <BtnSearch setReviewInfo={setReviewInfo} />
+                ) : (
+                    <div>
+                        <img src={reviewInfo.thumbnail} width="80" />
+                        <div>{reviewInfo.title}</div>
+                        <div>{reviewInfo.creator}</div>
+                        <div>{reviewInfo.genre}</div>
+                    </div>
+                )}
             </div>
             <div>
                 <input type="number" value={rating}

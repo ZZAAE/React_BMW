@@ -1,8 +1,8 @@
 import { dummyReviews } from "../hooks/dummyReviews";
 
-//const [reviewInfo ,setReviewInfo] = useState([]);
 
-const BtnSearch = ({ setReviewInfo }) => {
+const BtnSearch = ({setReviewInfo}) => {
+
 
     const addInfo = () => {
 
@@ -13,14 +13,19 @@ const BtnSearch = ({ setReviewInfo }) => {
             title,
             creator,
             thumbnail,
-            genre
+            genre,
         });
 
     };
 
 
     return (
-        <button onClick={addInfo}>+</button>
+        <div>
+            <button onClick={addInfo}>영화</button>
+            <button onClick={addInfo}>도서</button>
+        </div>
+        
+        
     );
 
 }

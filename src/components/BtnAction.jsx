@@ -1,13 +1,13 @@
 const BtnAction = () => {
 
-    const [ReviewDara, setReviewData] = useState();
+    const [ReviewData, setReviewData] = useState();
 
     const handleUpdate = () => {
         
     };
 
     const handleDelete = () => {
-        
+
     };
 
     return (

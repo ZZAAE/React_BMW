@@ -9,25 +9,35 @@ import Util from './pages/Util'
 import { useState } from 'react'
 import { dummyReviews } from './hooks/dummyReviews'
 
-
 function App() {
 
   const [ReviewData, setReviewData] = useState(dummyReviews);
-  const [ReviewInfo, setReviewInfo] = useState([]);
+  const [ReviewInfo, setReviewInfo] = useState(null);
 
   return (
     <BrowserRouter>
+
       <Nav_Bar/>
-      
-      <div className="page-content">   {/* 추가 */}
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Write" element={<Write ReviewData={ReviewData} setReviewData={setReviewData} ReviewInfo={ReviewInfo} setReviewInfo={setReviewInfo}/>} />
-            <Route path="/AllReviews" element={<AllReviews />} />
-            <Route path="/Hashtag" element={<Hashtag />} />
-            <Route path="/Util" element={<Util />} />
-        </Routes>
-    </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route
+          path="/Write"
+          element={
+            <Write
+              ReviewData={ReviewData}
+              setReviewData={setReviewData}
+              ReviewInfo={ReviewInfo}
+              setReviewInfo={setReviewInfo}
+            />
+          }
+        />
+
+        <Route path="/AllReviews" element={<AllReviews />} />
+        <Route path="/Hashtag" element={<Hashtag />} />
+      </Routes>
+
     </BrowserRouter>
   )
 }
