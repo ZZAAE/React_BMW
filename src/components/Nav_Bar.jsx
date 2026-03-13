@@ -11,12 +11,11 @@ const Nav_Bar = () => {
     useEffect(() => {
         const path = location.pathname;
 
-        if (path === "/Home") homeRef.current?.focus();
-        else if (path === "/write") writeRef.current?.focus();
-        else if (path === "/Moive") moiveRef.current?.focus();
-        else if (path === "/Book") bookRef.current?.focus();
-        else if (path === "/HashTag") hashtagRef.current?.focus();
-        else if (path === "/Util") utilRef.current?.focus();
+        if (path === "/") cursorRef.current?.focus();
+        else if (path === "/write") cursorRef.current?.focus();
+        else if (path === "/AllReviews") cursorRef.current?.focus();
+        else if (path === "/HashTag") cursorRef.current?.focus();
+        else if (path === "/Util") cursorRef.current?.focus();
 
     }, [location.pathname]);
 
@@ -33,6 +32,7 @@ const Nav_Bar = () => {
                 </button>
             </div>
             <div className="">
+<<<<<<< HEAD
                 <button ref={cursorRef} onClick={() => nav("/Moive")}>
                     Moive
                 </button>
@@ -43,6 +43,13 @@ const Nav_Bar = () => {
                 </button>
             </div>
             <div className="">
+=======
+                <button ref={cursorRef} onClick={() => nav("/AllReviews")}>
+                    AllReviews
+                </button>
+            </div>
+            <div className="">
+>>>>>>> origin/ReviewList
                 <button ref={cursorRef} onClick={() => nav("/HashTag")}>
                     HashTag
                 </button>
