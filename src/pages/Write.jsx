@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BtnSearch from "../components/BtnSearch";
 
-const Write = ({ ReviewData, setReviewData, ReviewInfo }) => {
+const Write = ({ ReviewData, setReviewData, ReviewInfo , setReviewInfo}) => {
 
     const nav = useNavigate();
     const ReviewId = useRef(ReviewData.length);
@@ -28,6 +29,8 @@ const Write = ({ ReviewData, setReviewData, ReviewInfo }) => {
     };
 
     const handleCreate = () => {
+
+        if (!reviewInfo) return;
 
         if (!review.trim()) return;
 
@@ -59,6 +62,9 @@ const Write = ({ ReviewData, setReviewData, ReviewInfo }) => {
 
     return (
         <div>
+            <div>
+                <BtnSearch setReviewInfo={setReviewInfo}/>
+            </div>
             <div>
                 <input type="number" value={rating}
                     onChange={addRating} />
