@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ReviewList } from "../components/ReviewList";
+import { dummyReviews } from "../hooks/dummyReviews";
 
 const AllReviews = () => {
-    const [type, setType] = useState("all")
+    const [sortedData, setSortedData] = useState(dummyReviews);
 
-    const setOrderType = (e) => {
-        setType(e.target.value);
+    const setOrderType = (value) => {
+        setSortedData(value === "all" ? dummyReviews : dummyReviews.filter((item) => item.media_type === value) )
     }
 
     return (
@@ -15,7 +16,7 @@ const AllReviews = () => {
             <button onClick={() => setOrderType("movie")}>영화</button>
             <button onClick={() => setOrderType("book")}>도서</button>
 
-            <ReviewList type={type} />
+            <ReviewList data={sortedData} />
         </div>
     );
 }; export default AllReviews;
