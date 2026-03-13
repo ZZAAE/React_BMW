@@ -17,10 +17,10 @@ function App() {
   return (
     <BrowserRouter>
       <Nav_Bar/>
-      <Write ReviewData={ReviewData} setReviewData={setReviewData} ReviewInfo={ReviewInfo} setReviewInfo={setReviewInfo}/>
+      
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Write" element={<Write />} />
+        <Route path="/Write" element={<Write ReviewData={ReviewData} setReviewData={setReviewData} ReviewInfo={ReviewInfo} setReviewInfo={setReviewInfo}/>} />
         <Route path="/AllReviews" element={<AllReviews />} />
         <Route path="/Hashtag" element={<Hashtag />} />
       </Routes>
