@@ -13,8 +13,7 @@ const Nav_Bar = () => {
 
         if (path === "/") cursorRef.current?.focus();
         else if (path === "/write") cursorRef.current?.focus();
-        else if (path === "/Moive") cursorRef.current?.focus();
-        else if (path === "/Book") cursorRef.current?.focus();
+        else if (path === "/AllReviews") cursorRef.current?.focus();
         else if (path === "/HashTag") cursorRef.current?.focus();
         else if (path === "/Util") cursorRef.current?.focus();
 
@@ -33,13 +32,8 @@ const Nav_Bar = () => {
                 </button>
             </div>
             <div className="">
-                <button ref={cursorRef} onClick={() => nav("/Moive")}>
-                    Moive
-                </button>
-            </div>
-            <div className="">
-                <button ref={cursorRef} onClick={() => nav("/Book")}>
-                    Book
+                <button ref={cursorRef} onClick={() => nav("/AllReviews")}>
+                    AllReviews
                 </button>
             </div>
             <div className="">

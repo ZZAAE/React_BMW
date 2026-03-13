@@ -1,9 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav_Bar from './components/Nav_Bar'
-import { ReviewList } from './components/ReviewList'
-import { dummyReviews } from './hooks/dummyReviews'
+
 
 import './App.css'
+import AllReviews from './pages/AllReviews'
+import Home from './pages/Home'
+import Write from './pages/Write'
+import Hashtag from './pages/Hashtag'
+
 
 function App() {
 
@@ -12,7 +16,11 @@ function App() {
       <Nav_Bar />
 
       <Routes>
-        <Route path="/" element={<ReviewList data={dummyReviews} type="latest" />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/Write" element={<Write />} />
+        <Route path="/AllReviews" element={<AllReviews />} />
+        <Route path="/Write" element={<Write />} />
+        <Route path="/Hashtag" element={<Hashtag />} />
       </Routes>
 
     </BrowserRouter>
