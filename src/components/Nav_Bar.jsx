@@ -6,12 +6,7 @@ const Nav_Bar = () => {
     const nav = useNavigate();
     const location = useLocation();
 
-    const homeRef = useRef(null);
-    const writeRef = useRef(null);
-    const moiveRef = useRef(null);
-    const bookRef = useRef(null);
-    const hashtagRef = useRef(null);
-    const utilRef = useRef(null);
+    const cursorRef = useRef(null);
 
     useEffect(() => {
         const path = location.pathname;
@@ -28,32 +23,32 @@ const Nav_Bar = () => {
     return (
         <div className="Nav_Button">
             <div className="">
-                <button ref={homeRef} onClick={() => nav("/Home")}>
+                <button ref={cursorRef} onClick={() => nav("/Home")}>
                     Home
                 </button>
             </div>
             <div className="">
-                <button ref={writeRef} onClick={() => nav("/Write")}>
+                <button ref={cursorRef} onClick={() => nav("/Write")}>
                     Write
                 </button>
             </div>
             <div className="">
-                <button ref={moiveRef} onClick={() => nav("/Moive")}>
+                <button ref={cursorRef} onClick={() => nav("/Moive")}>
                     Moive
                 </button>
             </div>
             <div className="">
-                <button ref={bookRef} onClick={() => nav("/Book")}>
+                <button ref={cursorRef} onClick={() => nav("/Book")}>
                     Book
                 </button>
             </div>
             <div className="">
-                <button ref={hashtagRef} onClick={() => nav("/HashTag")}>
+                <button ref={cursorRef} onClick={() => nav("/HashTag")}>
                     HashTag
                 </button>
             </div>
             <div className="">
-                <button ref={utilRef} onClick={() => nav("/Util")}>
+                <button ref={cursorRef} onClick={() => nav("/Util")}>
                     Util
                 </button>
             </div>
