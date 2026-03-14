@@ -12,7 +12,6 @@ const headers = {
 // Promise.all: Promise가 가져오는 건 하나의 객체. 모든 객체를 동시에 반환할때는 all로 줘야함
 async function searchMovie(query, page = 1) {
   console.log("serchMovie.js!");
-  console.log(import.meta.env.VITE_TMDB_KEY);
   const url = `${TMDB_BASE}/search/movie?query=${encodeURIComponent(query)}&language=ko-KR&page=${page}`;
   const res = await fetch(url, { headers });
   const data = await res.json();
@@ -24,6 +23,7 @@ async function searchMovie(query, page = 1) {
     thumbnail: movie.poster_path ? `${IMG_BASE}${movie.poster_path}` : null,
   }));
   
+  console.log(results);
   return results;
 }
 

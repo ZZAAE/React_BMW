@@ -10,7 +10,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "클린 코드",
       "creator": "로버트 C. 마틴",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/137/995/13799541.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/3408/36/cover200/8966260950_2.jpg",
       "genre": "IT/기술"
     }
   },
@@ -25,7 +25,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "채식주의자",
       "creator": "한강",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/068/707/06870792.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/29137/2/cover200/8936434594_2.jpg",
       "genre": "소설/문학"
     }
   },
@@ -40,7 +40,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "부의 추월차선",
       "creator": "엠제이 드마코",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/062/697/06269773.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/28723/81/cover200/k352836574_2.jpg",
       "genre": "경제/경영"
     }
   },
@@ -55,7 +55,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "미라클 모닝",
       "creator": "할 엘로드",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/116/937/11693763.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/38705/91/cover200/k432136923_1.jpg",
       "genre": "자기계발"
     }
   },
@@ -70,7 +70,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "파친코",
       "creator": "이민진",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/163/523/16352371.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/29496/39/cover200/s382931339_2.jpg",
       "genre": "소설/문학"
     }
   },
@@ -85,7 +85,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "그로킹 알고리즘",
       "creator": "아디트야 바르가바",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/148/391/14839144.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/35450/40/cover200/k382035042_1.jpg",
       "genre": "IT/기술"
     }
   },
@@ -100,7 +100,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "원씽",
       "creator": "게리 켈러",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/084/068/08406896.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/33147/58/cover200/k812937035_1.jpg",
       "genre": "자기계발"
     }
   },
@@ -115,7 +115,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "넛지",
       "creator": "리처드 탈러, 캐스 선스타인",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/054/033/05403347.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/29661/40/cover200/8901260670_3.jpg",
       "genre": "경제/경영"
     }
   },
@@ -130,7 +130,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "아몬드",
       "creator": "손원평",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/149/982/14998281.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/31893/32/cover200/k212833749_2.jpg",
       "genre": "소설/문학"
     }
   },
@@ -145,7 +145,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "도커 & 쿠버네티스",
       "creator": "용찬호",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/175/390/17539022.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/29141/96/cover200/k052837077_1.jpg",
       "genre": "IT/기술"
     }
   },
@@ -160,7 +160,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "사피엔스",
       "creator": "유발 하라리",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/080/951/08095108.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/31424/4/cover200/k482832219_1.jpg",
       "genre": "인문학"
     }
   },
@@ -175,7 +175,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "어린 왕자",
       "creator": "앙투안 드 생텍쥐페리",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/023/712/02371230.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/37971/74/cover200/k992034864_1.jpg",
       "genre": "소설/문학"
     }
   },
@@ -190,7 +190,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "완벽한 공부법",
       "creator": "고영성, 신영준",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/130/782/13078246.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/9860/58/cover200/k652535357_1.jpg",
       "genre": "자기계발"
     }
   },
@@ -205,7 +205,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "82년생 김지영",
       "creator": "조남주",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/133/756/13375643.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/9476/48/cover200/8937473135_1.jpg",
       "genre": "소설/문학"
     }
   },
@@ -220,7 +220,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "돈의 심리학",
       "creator": "모건 하우절",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/178/390/17839011.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/38331/50/cover200/k192034444_1.jpg",
       "genre": "경제/경영"
     }
   },
@@ -235,7 +235,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "트렌드 코리아 2026",
       "creator": "김난도 외",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/198/001/19800133.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/37144/79/cover200/k442031479_3.jpg",
       "genre": "경제/경영"
     }
   },
@@ -250,7 +250,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "총, 균, 쇠",
       "creator": "재레드 다이아몬드",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/023/913/02391350.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/31629/43/cover200/8934942460_1.jpg",
       "genre": "인문학"
     }
   },
@@ -265,7 +265,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "변신",
       "creator": "프란츠 카프카",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/023/914/02391481.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/37480/50/cover200/k522032917_1.jpg",
       "genre": "소설/문학"
     }
   },
@@ -280,7 +280,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "함께 자라기",
       "creator": "김창준",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/150/218/15021810.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/17597/74/cover200/8966262333_1.jpg",
       "genre": "IT/기술"
     }
   },
@@ -295,7 +295,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "아주 작은 습관의 힘",
       "creator": "제임스 클리어",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/163/771/16377175.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/37890/98/cover200/k182033525_1.jpg",
       "genre": "자기계발"
     }
   },
@@ -310,7 +310,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "린 스타트업",
       "creator": "에릭 리스",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/067/262/06726293.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/2064/86/cover200/8966260578_1.jpg",
       "genre": "경제/경영"
     }
   },
@@ -325,7 +325,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "흰",
       "creator": "한강",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/132/364/13236498.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/36099/46/cover200/k252038964_2.jpg",
       "genre": "소설/문학"
     }
   },
@@ -340,7 +340,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "파이썬 머신러닝 완벽 가이드",
       "creator": "권철민",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/167/691/16769143.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/29260/15/cover200/k212837700_1.jpg",
       "genre": "IT/기술"
     }
   },
@@ -355,7 +355,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "인간관계론",
       "creator": "데일 카네기",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/023/713/02371357.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/20945/79/cover200/s652933016_2.jpg",
       "genre": "자기계발"
     }
   },
@@ -370,7 +370,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "노인과 바다",
       "creator": "어니스트 헤밍웨이",
-      "thumbnail": "https://bookthumb-phinf.pstatic.net/thumb/023/916/02391617.jpg",
+      "thumbnail": "https://image.aladin.co.kr/product/37480/63/cover200/k902032019_1.jpg",
       "genre": "소설/문학"
     }
   },
@@ -385,7 +385,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "인터스텔라",
       "creator": "크리스토퍼 놀란",
-      "thumbnail": "https://movie-phinf.pstatic.net/20211115_278/1636946449487none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/gDN2NWtHbs8ZWEBQM8Dh5OVXdb4.jpg",
       "genre": "액션/SF"
     }
   },
@@ -400,7 +400,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "어벤져스: 엔드게임",
       "creator": "앤서니 루소, 조 루소",
-      "thumbnail": "https://movie-phinf.pstatic.net/20190424_150/1556089150823none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/z7ilT5rNN9kDo8JZmgyhM6ej2xv.jpg",
       "genre": "액션/SF"
     }
   },
@@ -415,7 +415,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "라라랜드",
       "creator": "데미안 셔젤",
-      "thumbnail": "https://movie-phinf.pstatic.net/20170118_36/1484710805916none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/ad9ndytwOckyShSc0A6tx1rZRkW.jpg",
       "genre": "로맨스"
     }
   },
@@ -430,7 +430,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "비포 선라이즈",
       "creator": "리처드 링클레이터",
-      "thumbnail": "https://movie-phinf.pstatic.net/20120604_25/1338783988062none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/o7mLGNdzY1z6w2bQv0NJNOoVKks.jpg",
       "genre": "로맨스"
     }
   },
@@ -445,7 +445,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "콰이어트 플레이스",
       "creator": "존 크래신스키",
-      "thumbnail": "https://movie-phinf.pstatic.net/20180412_167/1523499307454none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/vdiR7qc7cWxXD0pT8BZJ35DDB0B.jpg",
       "genre": "공포/스릴러"
     }
   },
@@ -460,7 +460,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "기생충",
       "creator": "봉준호",
-      "thumbnail": "https://movie-phinf.pstatic.net/20190528_266/1559024198386none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/jjHccoFjbqlfr4VGLVLT7yek0Xn.jpg",
       "genre": "공포/스릴러"
     }
   },
@@ -475,7 +475,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "쇼생크 탈출",
       "creator": "프랭크 다라본트",
-      "thumbnail": "https://movie-phinf.pstatic.net/20120907_125/1347006292804none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/qV9BQZdiM8foEzDz0Ag5hGWE5qM.jpg",
       "genre": "드라마"
     }
   },
@@ -490,7 +490,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "포레스트 검프",
       "creator": "로버트 저메키스",
-      "thumbnail": "https://movie-phinf.pstatic.net/20120604_43/1338784469843none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/l8wvbQQIBV8LBHmx3Wx9xbE2kzt.jpg",
       "genre": "드라마"
     }
   },
@@ -505,7 +505,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "센과 치히로의 행방불명",
       "creator": "미야자키 하야오",
-      "thumbnail": "https://movie-phinf.pstatic.net/20120604_298/1338784680952none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/u1L4qxIu5sC2P082uMHYt7Ifvnj.jpg",
       "genre": "애니메이션/코미디"
     }
   },
@@ -520,7 +520,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "극한직업",
       "creator": "이병헌",
-      "thumbnail": "https://movie-phinf.pstatic.net/20190116_22/1547607262461none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/jbHNkNydiZstlqhhBSvG19lm4NL.jpg",
       "genre": "애니메이션/코미디"
     }
   },
@@ -535,7 +535,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "펄프 픽션",
       "creator": "쿠엔틴 타란티노",
-      "thumbnail": "https://movie-phinf.pstatic.net/20120604_118/1338784871952none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/6lXRHGoEbnnBUKsuqpL9JxD4DzT.jpg",
       "genre": "드라마"
     }
   },
@@ -550,7 +550,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "글래디에이터",
       "creator": "리들리 스콧",
-      "thumbnail": "https://movie-phinf.pstatic.net/20120604_98/1338784801952none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/yemF0xxGU56Pf3JXxVr4C6kuKng.jpg",
       "genre": "액션/SF"
     }
   },
@@ -565,7 +565,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "탑건: 매버릭",
       "creator": "조셉 코신스키",
-      "thumbnail": "https://movie-phinf.pstatic.net/20220512_14/1652364121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/jeqXUwNilvNqNXqAHsdwm5pEfae.jpg",
       "genre": "액션/SF"
     }
   },
@@ -580,7 +580,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "퍼펙트 데이즈",
       "creator": "빔 벤더스",
-      "thumbnail": "https://movie-phinf.pstatic.net/20240112_293/1705038721578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/tD5njVBxiDBEPmBiPOSnmP6AmNt.jpg",
       "genre": "드라마"
     }
   },
@@ -588,14 +588,14 @@ export const dummyReviews = [
     "id": "movie_901362",
     "media_type": "movie",
     "rating": 3.5,
-    "review": "트롤스 밴드 투게더는 아이들과 함께 보기 정말 좋은 애니메이션이다. 팝송들을 활용한 뮤지컬 장면들이 신나고 컬러풀한 비주얼이 눈을 즐겁게 했다. 어른이 혼자 보기엔 조금 가볍지만 아이와 함께라면 최고다.",
+    "review": "트롤: 밴드 투게더는 아이들과 함께 보기 정말 좋은 애니메이션이다. 팝송들을 활용한 뮤지컬 장면들이 신나고 컬러풀한 비주얼이 눈을 즐겁게 했다. 어른이 혼자 보기엔 조금 가볍지만 아이와 함께라면 최고다.",
     "created_at": "2026-02-04",
     "updated_at": "2026-02-04",
     "tag": ["애니메이션", "뮤지컬", "가족"],
     "media_info": {
-      "title": "트롤스 밴드 투게더",
+      "title": "트롤: 밴드 투게더",
       "creator": "월트 도른",
-      "thumbnail": "https://movie-phinf.pstatic.net/20231102_293/1698921578234none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/qzgEPduJyQ6RkgMdn4nbjdKUYJM.jpg",
       "genre": "애니메이션/코미디"
     }
   },
@@ -610,7 +610,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "오펜하이머",
       "creator": "크리스토퍼 놀란",
-      "thumbnail": "https://movie-phinf.pstatic.net/20230706_3/1688624121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/jpD6z9fgNe7OqsHoDeAWQWoULde.jpg",
       "genre": "드라마"
     }
   },
@@ -625,7 +625,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "베놈: 라스트 댄스",
       "creator": "켈리 마셀",
-      "thumbnail": "https://movie-phinf.pstatic.net/20241015_14/1728964121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/ptfoRD0MmL8Ry0iBVccYbqoN9Xc.jpg",
       "genre": "액션/SF"
     }
   },
@@ -640,7 +640,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "위키드",
       "creator": "존 M. 추",
-      "thumbnail": "https://movie-phinf.pstatic.net/20241107_293/1730924121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/mCB6biaBEafLGbs1eTImqlOgZj9.jpg",
       "genre": "로맨스"
     }
   },
@@ -655,7 +655,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "모아나 2",
       "creator": "데이브 더릭, 제이슨 핸드",
-      "thumbnail": "https://movie-phinf.pstatic.net/20241120_293/1732064121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/hwmwTFtMbzxAWbIOp1RyyiOCyx0.jpg",
       "genre": "애니메이션/코미디"
     }
   },
@@ -670,7 +670,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "노스페라투",
       "creator": "로버트 에거스",
-      "thumbnail": "https://movie-phinf.pstatic.net/20241220_293/1734664121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/soIj2QYF9eBhQquSzStkzmtRwJn.jpg",
       "genre": "공포/스릴러"
     }
   },
@@ -685,7 +685,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "글래디에이터 2",
       "creator": "리들리 스콧",
-      "thumbnail": "https://movie-phinf.pstatic.net/20241113_293/1731464121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/aJaKH3wJvdcMyq28vUhHnINWPjI.jpg",
       "genre": "액션/SF"
     }
   },
@@ -700,7 +700,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "서브스턴스",
       "creator": "코랄리 파르자",
-      "thumbnail": "https://movie-phinf.pstatic.net/20240912_293/1726124121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/oUkeyrXvGUEylOQtlYMv9esNRiu.jpg",
       "genre": "공포/스릴러"
     }
   },
@@ -715,7 +715,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "퓨리오사: 매드맥스 사가",
       "creator": "조지 밀러",
-      "thumbnail": "https://movie-phinf.pstatic.net/20240514_293/1715664121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/zaUFDdJidS4Nyyd6jb2Ok3Kq4Vo.jpg",
       "genre": "액션/SF"
     }
   },
@@ -730,7 +730,7 @@ export const dummyReviews = [
     "media_info": {
       "title": "인사이드 아웃 2",
       "creator": "켈시 만",
-      "thumbnail": "https://movie-phinf.pstatic.net/20240611_293/1718064121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/x2BHx02jMbvpKjMvbf8XxJkYwHJ.jpg",
       "genre": "애니메이션/코미디"
     }
   },
@@ -745,8 +745,83 @@ export const dummyReviews = [
     "media_info": {
       "title": "콘클라베",
       "creator": "에드워드 버거",
-      "thumbnail": "https://movie-phinf.pstatic.net/20241025_293/1729864121578none_JPEG/movie_image.jpg",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/p1ELcxvzCa1uSCpRfDs4KddGn4x.jpg",
       "genre": "드라마"
+    }
+  },
+  {
+    "id": "movie_475557",
+    "media_type": "movie",
+    "rating": 4.5,
+    "review": "조커는 슈퍼히어로 영화의 탈을 쓴 가장 불편한 사회 고발 영화다. 아서 플렉이 조커가 되어가는 과정을 보며 그를 동정해야 할지 두려워해야 할지 경계가 무너졌다. 호아킨 피닉스의 연기는 말 그대로 압도적이었고, 계단 댄스 장면은 오래도록 뇌리에 박혔다. 단순한 악당의 탄생이 아닌 사회가 만들어낸 괴물에 대한 이야기다.",
+    "created_at": "2026-03-10",
+    "updated_at": "2026-03-10",
+    "tag": ["드라마", "스릴러", "DC"],
+    "media_info": {
+      "title": "조커",
+      "creator": "토드 필립스",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/6OnFzi7nU6t4j1rmX9QI8EYDWb4.jpg",
+      "genre": "드라마"
+    }
+  },
+  {
+    "id": "movie_581734",
+    "media_type": "movie",
+    "rating": 4.0,
+    "review": "올드보이는 박찬욱 감독의 복수 3부작 중 가장 충격적인 작품이다. 영화가 끝나고 나서 한동안 멍하니 앉아 있었다. 최민식 배우의 복도 격투 장면은 단 하나의 컷으로 촬영된 전설적인 장면으로, 한국 액션 영화의 역사를 새로 썼다. 결말을 알고 봐도 다시 볼 때마다 새로운 단서들이 보인다.",
+    "created_at": "2026-03-11",
+    "updated_at": "2026-03-11",
+    "tag": ["스릴러", "미스터리", "한국영화"],
+    "media_info": {
+      "title": "올드보이",
+      "creator": "박찬욱",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/e8xZvpCS2cHIPSc5WojNaSNvJJS.jpg",
+      "genre": "공포/스릴러"
+    }
+  },
+  {
+    "id": "movie_1184918",
+    "media_type": "movie",
+    "rating": 4.5,
+    "review": "와일드 로봇은 올해 본 애니메이션 중 단연 최고였다. 로봇 로즈가 야생에서 아기 거위를 키우며 자연과 공존하는 법을 배워가는 이야기가 이렇게 깊은 감동을 줄 줄 몰랐다. 어른이 보고 눈물을 흘리게 만드는 애니메이션이 몇 편이나 될까. 아이와 함께 꼭 보고 싶은 작품이다.",
+    "created_at": "2026-03-12",
+    "updated_at": "2026-03-12",
+    "tag": ["애니메이션", "감동", "가족"],
+    "media_info": {
+      "title": "와일드 로봇",
+      "creator": "크리스 샌더스",
+      "thumbnail": "https://image.tmdb.org/t/p/w500/iA9NiygwSOBy8FjZjvdYOMxRUG0.jpg",
+      "genre": "애니메이션/코미디"
+    }
+  },
+  {
+    "id": "book_9791165341909",
+    "media_type": "book",
+    "rating": 4.5,
+    "review": "달러구트 꿈 백화점은 잠들면 찾아가는 꿈 백화점이라는 설정 하나만으로도 이미 반은 성공한 소설이다. 각 챕터마다 등장하는 손님들의 사연이 짧지만 깊은 여운을 남긴다. 특히 오래된 꿈을 다시 꾸는 챕터에서는 나도 모르게 눈시울이 붉어졌다. 자기 전에 읽기 딱 좋은 따뜻한 소설이다.",
+    "created_at": "2026-03-13",
+    "updated_at": "2026-03-13",
+    "tag": ["소설", "판타지", "힐링"],
+    "media_info": {
+      "title": "달러구트 꿈 백화점",
+      "creator": "이미예",
+      "thumbnail": "https://image.aladin.co.kr/product/24512/70/cover200/k392630952_2.jpg",
+      "genre": "소설/문학"
+    }
+  },
+  {
+    "id": "book_9788937460029",
+    "media_type": "book",
+    "rating": 5.0,
+    "review": "데미안은 읽는 시기에 따라 완전히 다른 책이 된다. 십 대에 읽었을 때는 싱클레어의 방황이 공감됐고, 지금 다시 읽으니 알처럼 세상을 깨고 나오려는 인간의 본질적인 욕망이 보였다. 헤르만 헤세가 이 책을 20대 초반에 썼다는 사실이 믿기지 않는다. 평생 곁에 두고 싶은 책이다.",
+    "created_at": "2026-03-14",
+    "updated_at": "2026-03-14",
+    "tag": ["소설", "고전", "성장"],
+    "media_info": {
+      "title": "데미안",
+      "creator": "헤르만 헤세",
+      "thumbnail": "https://image.aladin.co.kr/product/26/0/cover200/s742633278_2.jpg",
+      "genre": "소설/문학"
     }
   }
 ]
