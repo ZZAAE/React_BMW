@@ -1,0 +1,80 @@
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+/* 검색 input */
+.search-container input {
+    width: 370px;
+    height: 45px;
+    padding: 8px 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+/* 버튼 */
+.search-container button {
+    height: 45px;
+    width: 70px;
+    padding: 0 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #D9CFC3;
+    color: #4B3B2F;
+
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.search-container button:hover {
+    background: #CFC2B3;
+}
+
+/* 검색 결과 */
+.search-container ul {
+    position: absolute;
+    top: 45px;
+
+    width: 380px;
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e2e2e2;
+
+    list-style: none;
+    padding: 6px 0;
+}
+
+/* 결과 item */
+.search-container li {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 8px 12px;
+
+    cursor: pointer;
+}
+
+.search-container li:hover {
+    background: #f5f5f5;
+}
+
+.search-container li img {
+    width: 40px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 4px;
+}

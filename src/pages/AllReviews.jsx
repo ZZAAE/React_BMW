@@ -1,22 +1,28 @@
 import { useState } from "react";
-import { ReviewList } from "../components/ReviewList";
+import ReviewList from "../components/ReviewList";
+import ReviewFilter from "../components/ReviewFilter";
+import ReviewOrder from "../components/ReviewOrder";
 import { dummyReviews } from "../hooks/dummyReviews";
+import useReviewList from "../util/useReviewList";
 
 const AllReviews = () => {
-    const [sortedData, setSortedData] = useState(dummyReviews);
+    const [filterType, setFilterType] = useState("all");
+    const [orderType, setOrderType] = useState("latest");
 
-    const setOrderType = (value) => {
-        setSortedData(value === "all" ? dummyReviews : dummyReviews.filter((item) => item.media_type === value) )
-    }
+    const filteredData = filterType === "all"
+        ? dummyReviews
+        : dummyReviews.filter((item) => item.media_type === filterType);
+
+    const sortedData = useReviewList(filteredData, orderType);
 
     return (
         <div>
             <h1>ALL REVIEWS</h1>
-            <button onClick={() => setOrderType("all")}>전체</button>
-            <button onClick={() => setOrderType("movie")}>영화</button>
-            <button onClick={() => setOrderType("book")}>도서</button>
-
-            <ReviewList data={sortedData} />
+            <ReviewFilter onFilter={setFilterType} />
+            <ReviewOrder onOrder={setOrderType} orderType={orderType} />
+            <ReviewList data={sortedData} className="grid-layout" />
         </div>
     );
-}; export default AllReviews;
+};
+
+export default AllReviews;
