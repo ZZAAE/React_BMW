@@ -23,14 +23,20 @@ const BtnSearch = ({setReviewInfo, plusRef}) => {
 
     const addBookInfo = async () => {
         if (!query) return;
+        console.log(query);
         
         const books = await searchBook(query);
+
+        console.log(books);
+
         if (!books || books.length === 0) return;
 
         // 전처리 적용
         const normalizedBooks = books.map(normalizeBook);
         setResults(normalizedBooks);
         setShowResults(true); //책 리스트 표시 나중에 css에서 표시했을 때 다른 거 안 밀리게 조정해야함.
+
+        
     };
 
     const selectBook = (book) => {
@@ -48,7 +54,6 @@ const BtnSearch = ({setReviewInfo, plusRef}) => {
         });
         setShowResults(false); //책 리스트 숨김
         setQuery(""); //초기화 !중요
-        setReviewInfo(results);
     };
 
     
