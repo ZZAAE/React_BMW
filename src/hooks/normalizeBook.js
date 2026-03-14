@@ -1,21 +1,40 @@
-const normalizeBook = ( book ) => {
-    
-    //첫 번째 저자만 추출
-    const rawCreator = book.author || "";
-    const cleanedCreator = rawCreator.split(',')[0].replace(/\s*\([^)]*\)/g, '').trim();
-    
-    //간단하게 장르 추출
-    const rawGenre = book.categoryName || "";
-    const parts = rawGenre.split('>');
-    const cleanedGenre = parts.length >= 2 ? parts[parts.length - 2].trim() : rawGenre;
-    
-    return {
-        media_type: "book",
-        title: book.title,
-        creator: cleanedCreator,
-        thumbnail: book.cover,
-        genre: cleanedGenre
-    };
-}
+const normalizeBook = (book) => {
+
+  // 장르 분리
+  const genres = book.categoryName
+    ? book.categoryName.split(">").map(g => g.trim())
+    : [];
+
+  // 저자
+  const author = book.author
+    ? book.author.split(",")[0].replace(/ 지은이| 저자| 옮긴이/g, "").trim()
+    : "";
+
+  return {
+
+    media_type: "book",
+
+    title: book.title || "",
+
+    creator: author,
+
+    genres: genres,
+
+    pubDate: book.pubDate || "",
+
+    // pages: book.subInfo?.itemPage || null,
+
+    publisher: book.publisher || "",
+
+    rating: book.customerReviewRank
+      ? book.customerReviewRank  : 0,
+
+    description: book.description || "",
+
+    thumbnail: book.cover || ""
+
+  };
+
+};
 
 export default normalizeBook;

@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BtnSearch from "../components/BtnSearch";
+import MediaSelection from "../components/MediaSelection";
+import ReviewForm from "../components/ReviewForm";
+import "./Write.css";
 
 const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
@@ -10,7 +12,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState("");
 
-    console.log(reviewInfo);
+    // console.log(reviewInfo);
     
 
     const selectTag = (review) => {
@@ -24,7 +26,8 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
     };
 
     const addRating = (e) => {
-        setRating(Number(e.target.value));
+        setRating(e);
+        console.log("rating:", e);
     };
 
     const addReview = (e) => {
@@ -46,8 +49,8 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
             media_type: reviewInfo.media_type,
             rating: rating,
             review: review,
-            created_at: Date.now(),
-            updated_at: Date.now(),
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
             tag: tags,
             media_info: {
                 title: reviewInfo.title,
@@ -57,38 +60,40 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
             }
         };
 
-        setReviewData(prev => {
-            console.log("prev reviewData:", prev);
-            const newData = [...prev, addNewData];
-            console.log("new reviewData:", newData);
-            return newData;
-        });
+        setReviewData(prev => [...prev, addNewData]);
 
         nav("/", { replace: true });
     };
 
 
     return (
-        <div style={{ textAlign: "center" }}>
-            <div>
-                {!reviewInfo ? (
-                    <BtnSearch setReviewInfo={setReviewInfo} />
-                ) : (
-                    <div>
-                        <img src={reviewInfo.thumbnail} width="80" />
-                        <div>{reviewInfo.title}</div>
-                        <div>{reviewInfo.creator}</div>
-                        <div>{reviewInfo.genre}</div>
-                    </div>
-                )}
+        <div className="write-page">
+
+            <div className="write-container">
+
+                {/* LEFT */}
+                <div className="write-left">
+                    <MediaSelection
+                        reviewInfo={reviewInfo}
+                        setReviewInfo={setReviewInfo}
+                    />
+
+                    <div className="add-button">+</div>
+                </div>
+
+                {/* RIGHT */}
+                <div className="write-right">
+                    <ReviewForm
+                        rating={rating}
+                        review={review}
+                        onChangeRating={addRating}
+                        onChangeReview={addReview}
+                        handleCreate={handleCreate}
+                    />
+                </div>
+
             </div>
-            <div>
-                <input type="number" value={rating}
-                    onChange={addRating} />
-                <input type="text" value={review}
-                    onChange={addReview} />
-                <button onClick={handleCreate}>완료</button>
-            </div>
+
         </div>
     );
 };

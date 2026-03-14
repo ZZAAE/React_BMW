@@ -1,6 +1,7 @@
 import MediaSearch from "../hooks/useMediaSearch";
 import normalizeBook from "../hooks/normalizeBook";
 import { useState } from "react";
+import "./BtnSearch.css";
 
 const BtnSearch = ({setReviewInfo}) => {
 
@@ -27,12 +28,19 @@ const BtnSearch = ({setReviewInfo}) => {
             title: book.title,
             creator: book.creator,
             thumbnail: book.thumbnail,
-            genre: book.genre,
+            genres: book.genres,
+            // pages: book.pages,
+            publisher: book.publisher,
+            rating: book.rating,
+            description: book.description,
+            pubDate: book.pubDate,
         });
         setShowResults(false); //책 리스트 숨김
         setQuery(""); //초기화 !중요
+
     };
 
+    
     return (
         <div className="search-container">
             <input

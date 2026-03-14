@@ -1,8 +1,7 @@
-
 const searchBook = async (query) => {
 
   const url =
-  `/aladin/ttb/api/ItemSearch.aspx?TTBKey=ttbyour67681428001&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101`;
+`/aladin/ttb/api/ItemSearch.aspx?TTBKey=ttbyour67681428001&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
 
   const res = await fetch(url);
   const data = await res.json();
