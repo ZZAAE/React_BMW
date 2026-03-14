@@ -3,7 +3,7 @@ import normalizeBook from "../hooks/normalizeBook";
 import { useState } from "react";
 import "./BtnSearch.css";
 
-const BtnSearch = ({setReviewInfo}) => {
+const BtnSearch = ({setReviewInfo, plusRef}) => {
 
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
@@ -44,6 +44,7 @@ const BtnSearch = ({setReviewInfo}) => {
     return (
         <div className="search-container">
             <input
+                ref={plusRef}
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}

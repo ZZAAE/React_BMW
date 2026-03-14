@@ -17,12 +17,12 @@
 
 /* LEFT */
 .write-left {
-    width: 45%;
-    padding: 60px;
+    width: 40%;
+    padding: 20px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center; /* 세로 가운데 정렬 */
 }
 
 /* + 버튼 */
@@ -37,14 +37,18 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-top: 310px;
+    margin-bottom: 390px;
 }
 
 /* RIGHT */
 .write-right {
-    width: 55%;
-    padding: 60px;
+    width: 60%;
+    padding: 60px 110px;
     border-left: 1px solid #E2D8CC;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: white;
+    border-radius: 0px 25px 25px 0px;
 }

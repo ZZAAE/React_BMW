@@ -1,7 +1,7 @@
 import BtnSearch from "./BtnSearch";
 import "./MediaSelection.css";
 
-const MediaSelection = ({ reviewInfo, setReviewInfo }) => {
+const MediaSelection = ({ reviewInfo, setReviewInfo, plusRef }) => {
 
 
     return (
@@ -9,7 +9,7 @@ const MediaSelection = ({ reviewInfo, setReviewInfo }) => {
 
             {!reviewInfo ? (
 
-                <BtnSearch setReviewInfo={setReviewInfo} />
+                <BtnSearch setReviewInfo={setReviewInfo} plusRef={plusRef} />
 
             ) : (
 
@@ -52,7 +52,7 @@ const MediaSelection = ({ reviewInfo, setReviewInfo }) => {
 
                     <div className="media">
                         <div className="media-description-label">
-                            출판일
+                            출판
                         </div>
                         <div className="media-description-child">
                             {reviewInfo.pubDate}
@@ -64,7 +64,7 @@ const MediaSelection = ({ reviewInfo, setReviewInfo }) => {
                             평점
                         </div>
                         <div className="media-description-child">
-                            {reviewInfo.rating}
+                            ⭐ {reviewInfo.rating}
                         </div>
                     </div>
 

@@ -11,8 +11,13 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
     const ReviewId = useRef(reviewData.length);
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState("");
+    const plusRef = useRef(null);
 
     // console.log(reviewInfo);
+
+    const handleFocusSearch = () => {
+        plusRef.current?.focus();
+    };
     
 
     const selectTag = (review) => {
@@ -76,9 +81,10 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
                     <MediaSelection
                         reviewInfo={reviewInfo}
                         setReviewInfo={setReviewInfo}
+                        plusRef={plusRef}
                     />
 
-                    <div className="add-button">+</div>
+                    {!reviewInfo && <div className="add-button" onClick={handleFocusSearch}>+</div>}
                 </div>
 
                 {/* RIGHT */}
