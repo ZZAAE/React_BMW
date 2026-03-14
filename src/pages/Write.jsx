@@ -65,9 +65,24 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
             }
         };
 
-        setReviewData(prev => [...prev, addNewData]);
-
-        nav("/", { replace: true });
+        // 서버에 POST
+        fetch('/api/reviews', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(addNewData)
+        })
+        .then(res => res.json())
+        .then(newReview => {
+            // 로컬 state 업데이트
+            setReviewData(prev => [...prev, newReview]);
+            nav("/", { replace: true });
+        })
+        .catch(err => {
+            console.error('Failed to save review', err);
+            // 에러 시에도 로컬에 추가 (임시)
+            setReviewData(prev => [...prev, addNewData]);
+            nav("/", { replace: true });
+        });
     };
 
 
