@@ -1,0 +1,29 @@
+/* 이미지 공통 */
+.review-list-item {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.review-list-item img {
+    width: 150px;
+    height: 225px;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+/* scroll-layout */
+.scroll-layout {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 16px;
+}
+
+/* grid-layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+}

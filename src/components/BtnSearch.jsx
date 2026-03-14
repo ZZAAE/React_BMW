@@ -1,31 +1,35 @@
-import { useState } from "react";
-import { searchMovie, searchBook } from "../hooks/useMediaSearch";
+import { useRef, useState } from "react";
+import { searchMovie, searchBook, normalizeMovie } from "../hooks/useMediaSearch";
 import normalizeBook from "../hooks/normalizeBook";
 import "./BtnSearch.css";
 
-const BtnSearch = ({setReviewInfo, plusRef}) => {
+const BtnSearch = ({ setReviewInfo, plusRef }) => {
 
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
     const [showResults, setShowResults] = useState(false);
+    const typeRef = useRef();
 
     // serchMovie
     const handleMovieSearch = async () => {
         if (!query) return;
 
         const movies = await searchMovie(query);
-        if(!movies || movies.length === 0) return;
-        
+        if (!movies || movies.length === 0) return;
+
+        typeRef.current = 1;
         console.log(movies);
         setResults(movies);
         setShowResults(true);
+        // setQuery(); //초기화 !중요
     }
 
     const addBookInfo = async () => {
         if (!query) return;
-        
+
         const books = await searchBook(query);
         if (!books || books.length === 0) return;
+        typeRef.current = 2;
 
         // 전처리 적용
         const normalizedBooks = books.map(normalizeBook);
@@ -33,25 +37,30 @@ const BtnSearch = ({setReviewInfo, plusRef}) => {
         setShowResults(true); //책 리스트 표시 나중에 css에서 표시했을 때 다른 거 안 밀리게 조정해야함.
     };
 
-    const selectBook = (book) => {
-        setReviewInfo({
-            media_type: book.media_type,
-            title: book.title,
-            creator: book.creator,
-            thumbnail: book.thumbnail,
-            genres: book.genres,
-            // pages: book.pages,
-            publisher: book.publisher,
-            rating: book.rating,
-            description: book.description,
-            pubDate: book.pubDate,
-        });
-        setShowResults(false); //책 리스트 숨김
-        setQuery(""); //초기화 !중요
-        setReviewInfo(results);
-    };
+    const selectItem = async (item) => {
+        if (typeRef.current === 2) {
+            setReviewInfo({
+                media_type: item.media_type,
+                title: item.title,
+                creator: item.creator,
+                thumbnail: item.thumbnail,
+                genres: item.genres,
+                // pages: book.pages,
+                publisher: item.publisher,
+                rating: item.rating,
+                description: item.description,
+                pubDate: item.pubDate,
+            });
+        }
+        else if (typeRef.current === 1) {
+            const normalized = await normalizeMovie(item.id);
+            setReviewInfo(normalized.media_info);
+        }
+        setShowResults(false);
+        setQuery("");
+    }
 
-    
+
     return (
         <div className="search-container">
             <input
@@ -67,20 +76,20 @@ const BtnSearch = ({setReviewInfo, plusRef}) => {
 
             {showResults && results.length > 0 && (
                 <ul>
-                    {results.map((book, index) => (
+                    {results.map((item, index) => (
                         <li
                             key={index}
-                            onClick={() => selectBook(book)}
-                            >
+                            onClick={() => selectItem(item)}
+                        >
                             <img
-                                src={book.thumbnail}
-                                alt={book.title}
+                                src={item.thumbnail}
+                                alt={item.title}
                                 width="50"
                             />
                             <div>
-                                <div><strong>{book.title}</strong></div>
-                                <div>{book.creator}</div>
-                                <div>{book.genre}</div>
+                                <div><strong>{item.title}</strong></div>
+                                <div>{item.creator}</div>
+                                <div>{item.genre}</div>
                             </div>
                         </li>
                     ))}
