@@ -1,87 +1,18 @@
-//Dummy Data. 나중에 지워야함!!!
 
-const dummyBooks = [
-  {
-    "title": "클린 코드",
-    "isbn": "9788966260959",
-    "author": "로버트 C. 마틴",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/137/995/13799541.jpg",
-    "description": "애자일 소프트웨어 장인 정신을 담은 책. 좋은 코드와 나쁜 코드를 구분하고, 나쁜 코드를 좋은 코드로 바꾸는 방법을 설명한다.",
-    "pubdate": "20131215"
-  },
-  {
-    "title": "아몬드",
-    "isbn": "9788954651269",
-    "author": "손원평",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/149/982/14998281.jpg",
-    "description": "감정을 느끼지 못하는 소년 윤재의 성장 이야기. 2019 한국과학문학상 수상작.",
-    "pubdate": "20170503"
-  },
-  {
-    "title": "부의 추월차선",
-    "isbn": "9788996328117",
-    "author": "엠제이 드마코",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/062/697/06269773.jpg",
-    "description": "평범한 직장인의 틀을 깨고 젊어서 부자가 되는 방법을 제시한 재테크 필독서.",
-    "pubdate": "20110801"
-  },
-  {
-    "title": "미라클 모닝",
-    "isbn": "9791187481027",
-    "author": "할 엘로드",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/116/937/11693763.jpg",
-    "description": "아침 1시간이 인생을 바꾼다. 성공한 사람들의 아침 루틴을 통해 삶을 변화시키는 방법을 소개한다.",
-    "pubdate": "20160912"
-  },
-  {
-    "title": "파친코",
-    "isbn": "9791190090024",
-    "author": "이민진",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/163/523/16352371.jpg",
-    "description": "재일교포 4대의 삶을 그린 대하소설. 차별과 생존, 정체성을 둘러싼 인간 군상을 섬세하게 묘사한다.",
-    "pubdate": "20190823"
-  },
-  {
-    "title": "그로킹 알고리즘",
-    "isbn": "9788966263080",
-    "author": "아디트야 바르가바",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/148/391/14839144.jpg",
-    "description": "그림으로 쉽게 배우는 알고리즘 입문서. 복잡한 개념을 시각적으로 풀어내 초보자도 이해하기 쉽다.",
-    "pubdate": "20170601"
-  },
-  {
-    "title": "원씽",
-    "isbn": "9788901180472",
-    "author": "게리 켈러",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/084/068/08406896.jpg",
-    "description": "성공의 핵심은 단 하나에 집중하는 것. 삶의 우선순위를 정리하고 진짜 중요한 일에만 집중하는 법을 알려준다.",
-    "pubdate": "20140304"
-  },
-  {
-    "title": "채식주의자",
-    "isbn": "9788936434595",
-    "author": "한강",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/068/707/06870792.jpg",
-    "description": "한국 소설 최초 맨부커상 수상작. 육식 거부라는 소극적 저항으로 시작된 한 여성의 비극적 변화를 그린다.",
-    "pubdate": "20070130"
-  },
-  {
-    "title": "넛지",
-    "isbn": "9788901107721",
-    "author": "리처드 탈러, 캐스 선스타인",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/054/033/05403347.jpg",
-    "description": "행동경제학의 고전. 사람들의 선택을 유도하는 부드러운 개입인 '넛지'의 원리와 사례를 소개한다.",
-    "pubdate": "20090105"
-  },
-  {
-    "title": "도커 & 쿠버네티스",
-    "isbn": "9791165920616",
-    "author": "용찬호",
-    "image": "https://bookthumb-phinf.pstatic.net/thumb/175/390/17539022.jpg",
-    "description": "컨테이너 기반 인프라의 핵심 기술인 도커와 쿠버네티스를 실습 중심으로 배울 수 있는 실전 가이드.",
-    "pubdate": "20211020"
-  }
-];
+const searchBook = async (query) => {
+
+  const url =
+  `/aladin/ttb/api/ItemSearch.aspx?TTBKey=ttbyour67681428001&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  return data.item;
+};
+
+
+//Dummy Data. 나중에 지워야함!!!
+//dummyBooks는 지웠음
 
 const dummyMovies = [
   {
@@ -176,4 +107,4 @@ const dummyMovies = [
   }
 ];
 
-export default {dummyBooks, dummyMovies}
+export default {dummyMovies, searchBook};

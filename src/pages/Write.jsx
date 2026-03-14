@@ -66,7 +66,7 @@ const Write = ({ ReviewData, setReviewData }) => {
 
 
     return (
-        <div>
+        <div style={{ textAlign: "center" }}>
             <div>
                 {!reviewInfo ? (
                     <BtnSearch setReviewInfo={setReviewInfo} />
