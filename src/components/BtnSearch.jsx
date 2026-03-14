@@ -1,55 +1,93 @@
 import { useState } from "react";
-import { searchMovie } from "../hooks/useMediaSearch";
-// import { searchBook } from "../hooks/useMediaSearch";
+import { searchMovie, searchBook } from "../hooks/useMediaSearch";
+import normalizeBook from "../hooks/normalizeBook";
+import "./BtnSearch.css";
 
+const BtnSearch = ({setReviewInfo, plusRef}) => {
 
-const BtnSearch = ({ setReviewInfo }) => {
     const [query, setQuery] = useState("");
-    const [selected, setSelected] = useState({ movie: true, book: true });
+    const [results, setResults] = useState([]);
+    const [showResults, setShowResults] = useState(false);
 
-    const toggleType = (type) => {
-        setSelected(prev => ({ ...prev, [type]: !prev[type] }));
-    };
-
-    const handleSearch = async () => {
+    // serchMovie
+    const handleMovieSearch = async () => {
         if (!query) return;
 
-        const results = [];
+        const movies = await searchMovie(query);
+        if(!movies || movies.length === 0) return;
+        
+        console.log(movies);
+        setResults(movies);
+        setShowResults(true);
+    }
 
-        if (selected.movie) {
-            const movies = await searchMovie(query);
-            results.push(...movies);
-        }
+    const addBookInfo = async () => {
+        if (!query) return;
+        
+        const books = await searchBook(query);
+        if (!books || books.length === 0) return;
 
-        if (selected.book) {
-            //const books = await searchBook(query);
-            //results.push(...books);
-            console.log("selected.book")
-        }
+        // 전처리 적용
+        const normalizedBooks = books.map(normalizeBook);
+        setResults(normalizedBooks);
+        setShowResults(true); //책 리스트 표시 나중에 css에서 표시했을 때 다른 거 안 밀리게 조정해야함.
+    };
 
+    const selectBook = (book) => {
+        setReviewInfo({
+            media_type: book.media_type,
+            title: book.title,
+            creator: book.creator,
+            thumbnail: book.thumbnail,
+            genres: book.genres,
+            // pages: book.pages,
+            publisher: book.publisher,
+            rating: book.rating,
+            description: book.description,
+            pubDate: book.pubDate,
+        });
+        setShowResults(false); //책 리스트 숨김
+        setQuery(""); //초기화 !중요
         setReviewInfo(results);
     };
 
-
+    
     return (
-        <div>
-            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                placeholder="제목을 입력하세요"
+        <div className="search-container">
+            <input
+                ref={plusRef}
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="영화 / 도서 검색"
             />
 
-            <button onClick={() => toggleType("movie")} className={selected.movie ? "active" : ""}>
-                영화
-            </button>
+            <button onClick={handleMovieSearch}>영화</button>
+            <button onClick={addBookInfo}>도서</button>
 
-            <button onClick={() => toggleType("book")} className={selected.book ? "active" : ""}>
-                도서
-            </button>
-
-            <button onClick={handleSearch}>검색</button>
+            {showResults && results.length > 0 && (
+                <ul>
+                    {results.map((book, index) => (
+                        <li
+                            key={index}
+                            onClick={() => selectBook(book)}
+                            >
+                            <img
+                                src={book.thumbnail}
+                                alt={book.title}
+                                width="50"
+                            />
+                            <div>
+                                <div><strong>{book.title}</strong></div>
+                                <div>{book.creator}</div>
+                                <div>{book.genre}</div>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
-
-}
+};
 
 export default BtnSearch;

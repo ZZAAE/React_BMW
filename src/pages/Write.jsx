@@ -1,18 +1,23 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BtnSearch from "../components/BtnSearch";
+import MediaSelection from "../components/MediaSelection";
+import ReviewForm from "../components/ReviewForm";
+import "./Write.css";
 
-const Write = ({ ReviewData, setReviewData }) => {
+const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
 
-    const [ReviewInfo, setReviewInfo] = useState(null);
     const nav = useNavigate();
-    const ReviewId = useRef(ReviewData.length);
-    const reviewInfo = ReviewInfo;
+    const ReviewId = useRef(reviewData.length);
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState("");
+    const plusRef = useRef(null);
 
-    console.log(reviewInfo);
+    // console.log(reviewInfo);
+
+    const handleFocusSearch = () => {
+        plusRef.current?.focus();
+    };
     
 
     const selectTag = (review) => {
@@ -26,7 +31,8 @@ const Write = ({ ReviewData, setReviewData }) => {
     };
 
     const addRating = (e) => {
-        setRating(Number(e.target.value));
+        setRating(e);
+        console.log("rating:", e);
     };
 
     const addReview = (e) => {
@@ -46,10 +52,10 @@ const Write = ({ ReviewData, setReviewData }) => {
         const addNewData = {
             id: ReviewId.current,
             media_type: reviewInfo.media_type,
-            rating,
-            review,
-            created_at: Date.now(),
-            updated_at: Date.now(),
+            rating: rating,
+            review: review,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
             tag: tags,
             media_info: {
                 title: reviewInfo.title,
@@ -66,26 +72,34 @@ const Write = ({ ReviewData, setReviewData }) => {
 
 
     return (
-        <div>
-            <div>
-                {!reviewInfo ? (
-                    <BtnSearch setReviewInfo={setReviewInfo} />
-                ) : (
-                    <div>
-                        <img src={reviewInfo.thumbnail} width="80" />
-                        <div>{reviewInfo.title}</div>
-                        <div>{reviewInfo.creator}</div>
-                        <div>{reviewInfo.genre}</div>
-                    </div>
-                )}
+        <div className="write-page">
+
+            <div className="write-container">
+
+                {/* LEFT */}
+                <div className="write-left">
+                    <MediaSelection
+                        reviewInfo={reviewInfo}
+                        setReviewInfo={setReviewInfo}
+                        plusRef={plusRef}
+                    />
+
+                    {!reviewInfo && <div className="add-button" onClick={handleFocusSearch}>+</div>}
+                </div>
+
+                {/* RIGHT */}
+                <div className="write-right">
+                    <ReviewForm
+                        rating={rating}
+                        review={review}
+                        onChangeRating={addRating}
+                        onChangeReview={addReview}
+                        handleCreate={handleCreate}
+                    />
+                </div>
+
             </div>
-            <div>
-                <input type="number" value={rating}
-                    onChange={addRating} />
-                <input type="text" value={review}
-                    onChange={addReview} />
-                <button onClick={handleCreate}>완료</button>
-            </div>
+
         </div>
     );
 };

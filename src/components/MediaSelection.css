@@ -1,0 +1,72 @@
+.media-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* 선택된 미디어 카드 */
+.media-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.media-preview img {
+    width: 200px;
+    height: 270px;
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+.media-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 20px;
+    width: 70%;
+    text-align: center;
+}
+
+.media-creator {
+    font-size: 14px;
+    color: #666;
+}
+
+.media-genre {
+    margin-bottom: 35px;
+    width: 70%;
+    text-align: center; /* 요소 가운데 정렬 */
+}
+
+.genre-tag {
+    border: 1px solid #000000;
+    padding: 4px 17px;
+    margin: 2px 3px;
+    border-radius: 18px;
+    display: inline-block;
+    font-size: 16px;
+    background: white;
+}
+
+.media {
+    display: flex;
+    align-items: center;
+    margin: 2px 0px;
+    width: 70%;
+}
+
+.media-description-label {
+    font-size: 19px;
+    font-weight: 600;
+    margin-right: 10%;
+    align-self: baseline;
+}
+
+.media-description-child {
+    font-size: 17px;
+    font-weight: 400;
+    flex:1;
+}
