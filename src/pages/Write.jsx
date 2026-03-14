@@ -90,4 +90,4 @@ const Write = ({ ReviewData, setReviewData }) => {
     );
 };
 
-export default Write;
+export default Write; 

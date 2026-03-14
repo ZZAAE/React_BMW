@@ -10,16 +10,21 @@ const headers = {
 // Promise: 대기 -> 완료/에러 를 반환하는 함수.
 // Promise를 사용하면 서버가 필요한 정보를 한 번에 호출할 수 있음.
 // Promise.all: Promise가 가져오는 건 하나의 객체. 모든 객체를 동시에 반환할때는 all로 줘야함
-async function useSearchMovie(query, page = 1) {
+async function searchMovie(query, page = 1) {
+  console.log("serchMovie.js!");
+  console.log(import.meta.env.VITE_TMDB_KEY);
   const url = `${TMDB_BASE}/search/movie?query=${encodeURIComponent(query)}&language=ko-KR&page=${page}`;
   const res = await fetch(url, { headers });
   const data = await res.json();
 
-  return data.results.map(movie => ({
+  const results = data.results.map(movie => (
+    {    
     id: movie.id,               // id=TMDB. normalizeMovie(id)
     title: movie.title,
     thumbnail: movie.poster_path ? `${IMG_BASE}${movie.poster_path}` : null,
   }));
+  
+  return results;
 }
 
 // "media_info"로 nomalize하여 return
@@ -33,6 +38,18 @@ async function normalizeMovie(id) {
   const director = credits.crew?.find(p => p.job === 'Director')?.name ?? null;
   const cast = credits.cast?.slice(0, 5).map(p => p.name) ?? [];
 
+  // DELETE: 최종엔 지우기
+  console.log(
+      "✔️\ntitle: ",detail.title,
+      "\nthumbnail: ",detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
+      "\ndirector: ",director,
+      "\ngenre: ",detail.genres?.map(g => g.name) ?? [],
+      "\npubDate: ",detail.release_date ?? null, 
+      "\nruntime: ",detail.runtime ?? null,        // minutes
+      "\navgRating: ",detail.vote_average ?? null,    // float: MAX(10.0)
+      "\ncast: ",cast,                        // array
+      "\noverview: ",detail.overview,);
+
   return {
     media_info: {
       title: detail.title,
@@ -43,6 +60,7 @@ async function normalizeMovie(id) {
       runtime: detail.runtime ?? null,        // minutes
       avgRating: detail.vote_average ?? null,    // float: MAX(10.0)
       cast: cast,                        // array
+      overview: detail.overview,
     },
   };
 }
@@ -223,5 +241,5 @@ async function normalizeMovie(id) {
     }
   ];
 
-  export default { dummyBooks, dummyMovies }
-  export {useSearchMovie, normalizeMovie}
+  export default { dummyBooks, dummyMovies };
+  export {searchMovie, normalizeMovie};
