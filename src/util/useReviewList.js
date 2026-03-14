@@ -22,5 +22,4 @@ const useReviewList = (ReviewData, orderType) => {
 
     return sortedData;
 };
-
-export default useReviewList
+export default useReviewList;

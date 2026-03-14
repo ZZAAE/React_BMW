@@ -17,26 +17,28 @@ function App() {
   return (
     <BrowserRouter>
 
-      <Nav_Bar/>
+      <Nav_Bar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <div className="page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route
-          path="/Write"
-          element={
-            <Write
-              ReviewData={ReviewData}
-              setReviewData={setReviewData}
-              ReviewInfo={ReviewInfo}
-              setReviewInfo={setReviewInfo}
-            />
-          }
-        />
+          <Route
+            path="/Write"
+            element={
+              <Write
+                ReviewData={ReviewData}
+                setReviewData={setReviewData}
+                ReviewInfo={ReviewInfo}
+                setReviewInfo={setReviewInfo}
+              />
+            }
+          />
 
-        <Route path="/AllReviews" element={<AllReviews />} />
-        <Route path="/Hashtag" element={<Hashtag />} />
-      </Routes>
+          <Route path="/AllReviews" element={<AllReviews />} />
+          <Route path="/Hashtag" element={<Hashtag />} />
+        </Routes>
+      </div>
 
     </BrowserRouter>
   )
