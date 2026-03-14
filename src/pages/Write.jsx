@@ -2,13 +2,11 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BtnSearch from "../components/BtnSearch";
 
-const Write = ({ ReviewData, setReviewData }) => {
+const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
 
-    const [ReviewInfo, setReviewInfo] = useState(null);
     const nav = useNavigate();
-    const ReviewId = useRef(ReviewData.length);
-    const reviewInfo = ReviewInfo;
+    const ReviewId = useRef(reviewData.length);
     const [rating, setRating] = useState(0);
     const [review, setReview] = useState("");
 
@@ -46,8 +44,8 @@ const Write = ({ ReviewData, setReviewData }) => {
         const addNewData = {
             id: ReviewId.current,
             media_type: reviewInfo.media_type,
-            rating,
-            review,
+            rating: rating,
+            review: review,
             created_at: Date.now(),
             updated_at: Date.now(),
             tag: tags,
@@ -59,7 +57,12 @@ const Write = ({ ReviewData, setReviewData }) => {
             }
         };
 
-        setReviewData(prev => [...prev, addNewData]);
+        setReviewData(prev => {
+            console.log("prev reviewData:", prev);
+            const newData = [...prev, addNewData];
+            console.log("new reviewData:", newData);
+            return newData;
+        });
 
         nav("/", { replace: true });
     };

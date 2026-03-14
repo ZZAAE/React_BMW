@@ -11,8 +11,11 @@ import { dummyReviews } from './hooks/dummyReviews'
 
 function App() {
 
-  const [ReviewData, setReviewData] = useState(dummyReviews);
-  const [ReviewInfo, setReviewInfo] = useState(null);
+  const [reviewData, setReviewData] = useState(dummyReviews);
+  const [reviewInfo, setReviewInfo] = useState(null);
+
+  console.log("App reviewData:", reviewData);
+  console.log("App render", reviewData.length);
 
   return (
     <BrowserRouter>
@@ -26,9 +29,9 @@ function App() {
           path="/Write"
           element={
             <Write
-              ReviewData={ReviewData}
+              reviewData={reviewData}
               setReviewData={setReviewData}
-              ReviewInfo={ReviewInfo}
+              reviewInfo={reviewInfo}
               setReviewInfo={setReviewInfo}
             />
           }
