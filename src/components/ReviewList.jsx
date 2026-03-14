@@ -13,7 +13,7 @@ const ReviewList = ({ data, className }) => {
                     {className === "scroll-layout" && (
                         <>
                         <h3>{item.media_info.title}</h3>
-                        <span>{item.media_info.genre}</span>
+                        <span>{item.media_info.creator}</span>
                         </>
                     )}
                 </button>

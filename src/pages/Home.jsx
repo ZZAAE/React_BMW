@@ -14,6 +14,8 @@ const Home = () => {
         const updatedAt = new Date(item.updated_at);
         return updatedAt >= monday && updatedAt <= sunday;
     });
+    
+    console.log("ThisWeek", weeklyData.updated_at)
 
     // const [sortedData, setSortedData] = useState(dummyReviews);
     // const setOrderType = (value) => {
