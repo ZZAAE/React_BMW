@@ -2,20 +2,25 @@
     padding: 60px 60px;
 }
 
-.this-week-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
+.all-container {
     background-color: var(--color-ligth-beige);
-    border-radius: 16px;
-    padding: 28px;
+    border-radius: 60px;
+    margin-top: 40px;
+    padding: 30px 60px 60px 60px;
 }
 
-.this-week-title {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--color-dark-brown);
+.all-reviews-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 60px 0 60px;
+    
+}
+
+.all-reviews-container h2 {
+    margin: 0;
+}
+
+.home-list {
+    margin: 74px 60px 0 60px;
 }

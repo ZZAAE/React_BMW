@@ -36,26 +36,41 @@ const ReviewList = ({ data, className }) => {
     }
 
     if (className === "grid-layout") {
-        return (
-            <div className={className} ref={containerRef}>
-                {shelves.map((shelf, shelfIndex) => (
+    return (
+        <div className={className} ref={containerRef}>
+            {shelves.map((shelf, shelfIndex) => {
+                // chunkSize만큼 투명 아이템으로 채우기
+                const paddedShelf = [
+                    ...shelf,
+                    ...Array(chunkSize - shelf.length).fill(null)
+                ];
+
+                return (
                     <div className="shelf-row" key={shelfIndex}>
                         <div className="shelf-books">
-                            {shelf.map((item) => (
-                                <button
-                                    key={item.id}
-                                    className="review-list-item"
-                                    onClick={() => navigate(`/review/${item.id}`)}>
-                                    <img src={item.media_info.thumbnail} alt={item.media_info.title} draggable="false" />
-                                </button>
+                            {paddedShelf.map((item, i) => (
+                                item ? (
+                                    <button
+                                        key={item.id}
+                                        className="review-list-item"
+                                        onClick={() => navigate(`/review/${item.id}`)}>
+                                        <img src={item.media_info.thumbnail} alt={item.media_info.title} draggable="false" />
+                                    </button>
+                                ) : (
+                                    <div
+                                        key={`empty-${i}`}
+                                        className="review-list-item review-list-item-empty"
+                                    />
+                                )
                             ))}
                         </div>
                         <ShelfSVG className="shelf-svg" />
                     </div>
-                ))}
-            </div>
-        );
-    }
+                );
+            })}
+        </div>
+    );
+}
 
     return (
         <div className={className}>

@@ -55,6 +55,7 @@
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .popup-item img {
@@ -73,14 +74,13 @@
 .popup-title {
     font-size: 13px;
     font-weight: 500;
-    color: #213547;                      /* 변수 없음 */
+    color: #213547;
     margin: 0;
     text-align: center;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;           /* 한 줄 고정 */
     overflow: hidden;
-    height: 15%;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .popup-genre {
@@ -90,6 +90,7 @@
     padding: 4px 10px;
     border-radius: 17px;
     max-width: 81px;
+    text-align: center;
 }
 
 .align-genre {

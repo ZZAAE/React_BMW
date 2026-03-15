@@ -49,8 +49,7 @@
 .search-container ul {
     position: absolute;
     top: 45px;
-
-    width: 380px;
+    left: 0;
     max-height: 300px;
 
     overflow-y: auto;

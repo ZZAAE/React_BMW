@@ -13,6 +13,13 @@
     object-position: bottom;
 }
 
+.review-list-item-empty {
+    width: 150px;
+    height: 225px;
+    background: transparent;
+    flex-shrink: 0;
+}
+
 /* scroll-layout */
 .scroll-layout {
     display: flex;
@@ -83,7 +90,7 @@
     align-items: flex-end;
     overflow: hidden;
     margin-bottom: -4px; 
-    justify-content: left;  
+    justify-content: center;  
     padding: 0 30px;  
 }
 

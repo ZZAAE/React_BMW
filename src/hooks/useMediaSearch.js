@@ -38,18 +38,6 @@ async function normalizeMovie(id) {
     credits.crew?.find((p) => p.job === "Director")?.name ?? null;
   const cast = credits.cast?.slice(0, 5).map((p) => p.name) ?? [];
 
-  // DELETE: 최종엔 지우기
-  console.log(
-      "✔️\ntitle: ",detail.title,
-      "\nthumbnail: ",detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
-      "\ncreator: ",director,
-      "\ngenre: ",detail.genres?.map(g => g.name) ?? [],
-      "\npubDate: ",detail.release_date ?? null, 
-      "\nruntime: ",detail.runtime ?? null,        // minutes
-      "\nrating: ",detail.vote_average ?? null,    // float: MAX(10.0)
-      "\ncast: ",cast,                        // array
-      "\ndescription: ",detail.overview ?? "없음",);
-
   return {
     media_info: {
       title: detail.title,
@@ -73,8 +61,6 @@ const searchBook = async (query) => {
 
   const res = await fetch(url);
   const data = await res.json();
-
-  console.log(data);
 
   return data.item;
 };

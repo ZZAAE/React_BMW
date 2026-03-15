@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { searchMovie, searchBook, normalizeMovie } from "../hooks/useMediaSearch";
 import normalizeBook from "../hooks/normalizeBook";
 import "./BtnSearch.css";
@@ -9,8 +9,10 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
     const [results, setResults] = useState([]);
     const [showResults, setShowResults] = useState(false);
     const typeRef = useRef();
+    const [inputWidth, setInputWidth] = useState(0);
+    const inputRef = useRef();
 
-    // serchMovie
+
     const handleMovieSearch = async () => {
         if (!query) return;
 
@@ -21,7 +23,6 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
         console.log(movies);
         setResults(movies);
         setShowResults(true);
-        // setQuery(); //초기화 !중요
     }
 
     const addBookInfo = async () => {
@@ -31,10 +32,9 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
         if (!books || books.length === 0) return;
         typeRef.current = 2;
 
-        // 전처리 적용
         const normalizedBooks = books.map(normalizeBook);
         setResults(normalizedBooks);
-        setShowResults(true); //책 리스트 표시 나중에 css에서 표시했을 때 다른 거 안 밀리게 조정해야함.
+        setShowResults(true);
     };
 
     const selectItem = async (item) => {
@@ -45,7 +45,6 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
                 creator: item.creator,
                 thumbnail: item.thumbnail,
                 genres: item.genres,
-                // pages: book.pages,
                 publisher: item.publisher,
                 rating: item.rating,
                 description: item.description,
@@ -63,11 +62,24 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
         console.log(!item.runtime ? "movie" : "book");
     }
 
+    useEffect(() => {
+    if (!inputRef.current) return;
+
+    const observer = new ResizeObserver(() => {
+        setInputWidth(inputRef.current?.offsetWidth);
+    });
+
+    observer.observe(inputRef.current);
+    return () => observer.disconnect();
+}, []);
 
     return (
         <div className="search-container">
             <input
-                ref={plusRef}
+                ref={(el) => {
+                    if (plusRef) plusRef.current = el;
+                    inputRef.current = el;
+                }}
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -78,7 +90,7 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
             <button onClick={addBookInfo}>도서</button>
 
             {showResults && results.length > 0 && (
-                <ul>
+                <ul style={{ width: inputWidth }}>
                     {results.map((item, index) => (
                         <li
                             key={index}

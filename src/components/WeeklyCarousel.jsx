@@ -1,11 +1,10 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./WeeklyCarousel.css";
 
 const WeeklyCarousel = ({ data }) => {
     const navigate = useNavigate();
-    const centerIndex = Math.floor(data.length / 2);
-    const [currentIndex, setCurrentIndex] = useState(centerIndex);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const dragStartX = useRef(0);
     const isDragging = useRef(false);
 
@@ -32,7 +31,30 @@ const WeeklyCarousel = ({ data }) => {
         }
     };
 
-    // const translateX = -(currentIndex * cardStep) + (50 - currentCardWidth / 2);
+    const carouselRef = useRef(null);
+    const [carouselWidth, setCarouselWidth] = useState(0);
+
+    useEffect(() => {
+        if (!carouselRef.current) return;
+        const observer = new ResizeObserver(() => {
+            setCarouselWidth(carouselRef.current.offsetWidth);
+        });
+        observer.observe(carouselRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    //CSS
+    // index번째 아이템의 시작 x좌표 계산
+    const getItemStart = (index) => {
+        let x = 0;
+        for (let i = 0; i < index; i++) {
+            x += (i === currentIndex ? 200 : 159.5) + 40;
+        }
+        return x;
+    };
+
+    const featuredStart = getItemStart(currentIndex) - 22;
+    const featuredCenter = featuredStart + 200 / 2;
 
     return (
         <div className="this-week-section" onMouseLeave={handleDragEnd}>
@@ -40,12 +62,12 @@ const WeeklyCarousel = ({ data }) => {
             <div className="carousel-wrapper">
                 <div className="carousel-btn left" onClick={() => setCurrentIndex(prev => Math.max(prev - 1, 0))} />
 
-                <div className="carousel"
+                <div className="carousel" ref={carouselRef}
                     onMouseDown={handleDragStart} onTouchStart={handleDragStart}
                     onMouseMove={handleDragMove} onTouchMove={handleDragMove}
                     onMouseUp={handleDragEnd} onTouchEnd={handleDragEnd}>
                     <div className="carousel-track"
-                        style={{ transform: `translateX(calc(-${currentIndex * 190}px + calc(50% - 100px)))` }}>
+                        style={{ transform: `translateX(${carouselWidth / 2 - featuredCenter}px)` }}>
                         {data.map((item, index) => {
                             const distance = Math.abs(index - currentIndex);
                             const isFeatured = index === currentIndex;
@@ -53,7 +75,7 @@ const WeeklyCarousel = ({ data }) => {
                             return (
                                 <button key={item.id}
                                     className={`carousel-item ${isFeatured ? "featured" : ""}`}
-                                    style={{ opacity: 1 - distance * 0.15, }}
+                                    style={{ opacity: 1 - distance * 0.15 }}
                                     onClick={(e) => {
                                         if (Math.abs(dragStartX.current - e.clientX) > 10) return;
                                         if (isFeatured) navigate(`/review/${item.id}`);
