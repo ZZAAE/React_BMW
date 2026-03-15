@@ -27,6 +27,11 @@ let reviews = [
   }
 ];
 
+// GET /api/reviews - 전체 리뷰 가져오기
+app.get('/api/reviews', (req, res) => {
+  res.json(reviews);
+});
+
 // GET /api/reviews/:id - 특정 리뷰 가져오기
 app.get('/api/reviews/:id', (req, res) => {
   const id = req.params.id;

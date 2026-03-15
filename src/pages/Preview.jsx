@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import MediaPreview from "../components/MediaPreview";
 import ReviewPreview from "../components/ReviewPreview";
 import BtnAction from "../components/BtnAction";
+import "./Write.css";
 
 const Preview = ({reviewData ,setReviewData}) => {
   const { id } = useParams();
@@ -31,6 +32,8 @@ const Preview = ({reviewData ,setReviewData}) => {
   if (!review) return <div>Review not found</div>;
 
   return (
+
+    console.log("Preview review:", review),
     <div>
       <div className="write-page">
         <div className="write-container">

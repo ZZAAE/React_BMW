@@ -1,11 +1,12 @@
 import "./MediaSelection.css";
 
+
 const MediaPreview = ({ review }) => {
   return (
     <div className="media-preview">
-      <img src={review.thumbnail} alt={review.title} />
+      <img src={review.media_info.thumbnail} alt={review.media_info.title} />
 
-      <div className="media-title">{review.title}</div>
+      <div className="media-title">{review.media_info.title}</div>
 
       <div className="media-genre">
         {review.genres &&
@@ -18,7 +19,7 @@ const MediaPreview = ({ review }) => {
 
       <div className="media">
         <div className="media-description-label">저자</div>
-        <div className="media-description-child">{review.creator}</div>
+        <div className="media-description-child">{review.media_info.creator}</div>
       </div>
 
       {/* <div className="media-pages">
@@ -27,7 +28,7 @@ const MediaPreview = ({ review }) => {
 
       <div className="media">
         <div className="media-description-label">출판</div>
-        <div className="media-description-child">{review.pubDate}</div>
+        <div className="media-description-child">{review.media_info.pubDate}</div>
       </div>
 
       <div className="media">
@@ -37,7 +38,7 @@ const MediaPreview = ({ review }) => {
 
       <div className="media">
         <div className="media-description-label">소개</div>
-        <div className="media-description-child">{review.description}</div>
+        <div className="media-description-child">{review.media_info.description}</div>
       </div>
     </div>
   );

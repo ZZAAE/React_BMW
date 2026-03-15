@@ -116,6 +116,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
         else {
 
             const addNewData = {
+                id: Date.now(),
                 media_type: reviewInfo.media_type,
                 rating: rating,
                 review: review,
@@ -127,6 +128,8 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
                     creator: reviewInfo.creator,
                     thumbnail: reviewInfo.thumbnail,
                     genre: reviewInfo.genre,
+                    pubDate: reviewInfo.pubDate,
+                    description: reviewInfo.description,
                 }
             };
 
