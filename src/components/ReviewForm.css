@@ -68,10 +68,12 @@
 }
 
 .bubble-wrapper .rating-stars {
-    align-self: anchor-center;
     gap: 8px;
     display: flex;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -51%);
     margin: 0;
     z-index: 2;
 }
