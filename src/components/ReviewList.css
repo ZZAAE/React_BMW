@@ -63,8 +63,13 @@
 .grid-layout {
     display: flex;
     flex-direction: column;
-    width: 100%;        /* 추가 */
-    overflow: hidden;   /* 추가 */
+    width: 100%;
+    overflow: hidden;
+}
+
+.grid-layout .review-list-item {
+    flex-shrink: 0;
+    width: 150px;    
 }
 
 .shelf-row {
@@ -77,8 +82,9 @@
     gap: 36px;
     align-items: flex-end;
     overflow: hidden;
-    margin-bottom: -3px; 
-    justify-content: center;  
+    margin-bottom: -4px; 
+    justify-content: left;  
+    padding: 0 30px;  
 }
 
 .shelf-svg {

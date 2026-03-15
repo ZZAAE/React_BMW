@@ -10,8 +10,9 @@ button {
     padding: 8px 16px;
     margin-right: 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
+    width: 85px;
 }
 
 button.active {

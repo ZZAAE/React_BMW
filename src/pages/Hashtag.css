@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 60px;
 }
 
 .hashtag-header h1 {
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--color-dark-brown);    /* #4B3B2F */
-    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-dark-brown); ;
+    margin-left: 28px;
 }
 
 .hashtag-controls {
@@ -23,4 +23,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     overflow-y: auto;
+}
+
+.hashtag-container {
+    padding: 80px;
+    background-color: #FEF9F3;
 }

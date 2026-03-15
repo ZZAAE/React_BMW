@@ -1,3 +1,5 @@
+import "./ReviewOrder.css";
+
 const ReviewOrder = ({ onOrder, orderType }) => {
     return (
         <select onChange={(e) => onOrder(e.target.value)} value={orderType}>

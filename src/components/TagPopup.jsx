@@ -24,7 +24,9 @@ const TagPopup = ({ tag, reviews, onClose }) => {
                                 alt={review.media_info.title}
                             />
                             <p className="popup-title">{review.media_info.title}</p>
-                            <span className="popup-genre">{review.media_info.genre}</span>
+                            <div className="align-genre">
+                                <span className="popup-genre">{review.media_info.genre}</span>
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -1,16 +1,16 @@
 import express from 'express';
 import cors from 'cors';
 
+// In-memory storage for reviews (replace with DB later)
+import { dummyReviews } from './src/hooks/dummyReviews.js';
+let reviews = dummyReviews;
+
 const app = express();
 const PORT = 3001;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-
-// In-memory storage for reviews (replace with DB later)
-import { dummyReviews } from './src/hooks/dummyReviews.js';
-let reviews = dummyReviews;
 
 // GET /api/review - 전체 리뷰 가져오기
 app.get('/api/review', (req, res) => {
