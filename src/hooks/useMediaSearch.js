@@ -64,14 +64,18 @@ async function normalizeMovie(id) {
 }
 
 const searchBook = async (query) => {
-
+  console.log(`TTBKey=${import.meta.env.VITE_ALADIN_KEY}`);
+  
   const url =
-`/aladin/ttb/api/ItemSearch.aspx?TTBKey=${import.meta.env.VITE_ALADIN_KEY}&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
+`/aladin/ttb/api/ItemSearch.aspx?TTBKey=ttbyour67681428001&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
 
   const res = await fetch(url);
   const data = await res.json();
 
+  console.log(data);
+
   return data.item;
+  
 };
 
   export {searchBook, searchMovie, normalizeMovie};

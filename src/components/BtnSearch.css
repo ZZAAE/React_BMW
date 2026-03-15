@@ -1,8 +1,9 @@
 .search-container {
     position: relative;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     gap: 13px;
+    height: 45px;
 }
 
 /* 검색 input */
@@ -23,6 +24,7 @@
     height: 45px;
     width: 70px;
     padding: 0 14px;
+    margin-left: 7px;
 
     border: none;
     border-radius: 8px;
