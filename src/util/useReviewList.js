@@ -3,11 +3,11 @@ const useReviewList = (ReviewData, orderType) => {
     const sortedData = [...ReviewData].sort((a, b) => {
 
         if(orderType === "oldest"){
-            return new Date(b.created_at) - new Date(a.created_at);
+            return new Date(b.updated_at) - new Date(a.updated_at);
         }
 
         if(orderType === "latest"){
-            return new Date(a.created_at) -  new Date(b.created_at);
+            return new Date(a.updated_at) -  new Date(b.updated_at);
         }
 
         if(orderType === "Kroldest"){

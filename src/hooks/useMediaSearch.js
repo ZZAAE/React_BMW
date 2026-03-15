@@ -43,21 +43,22 @@ async function normalizeMovie(id) {
       "\ngenre: ",detail.genres?.map(g => g.name) ?? [],
       "\npubDate: ",detail.release_date ?? null, 
       "\nruntime: ",detail.runtime ?? null,        // minutes
-      "\navgRating: ",detail.vote_average ?? null,    // float: MAX(10.0)
+      "\nrating: ",detail.vote_average ?? null,    // float: MAX(10.0)
       "\ncast: ",cast,                        // array
-      "\noverview: ",detail.overview,);
+      "\ndescription: ",detail.overview ?? "없음",);
 
   return {
     media_info: {
       title: detail.title,
+      media_type: "movie",
       thumbnail: detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
       creator: director,
       genre: detail.genres?.map(g => g.name) ?? [],
       pubDate: detail.release_date ?? null, 
       runtime: detail.runtime ?? null,        // minutes
-      avgRating: detail.vote_average ?? null,    // float: MAX(10.0)
+      rating: detail.vote_average ?? null,    // float: MAX(10.0)
       cast: cast,                        // array
-      overview: detail.overview,
+      description: detail.overview,
     },
   };
 }
@@ -65,7 +66,7 @@ async function normalizeMovie(id) {
 const searchBook = async (query) => {
   console.log(query);
   const url =
-`/aladin/ttb/api/ItemSearch.aspx?TTBKey=${import.meta.env.VITE_ALADIN_KEY}&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
+`/aladin/ttb/api/ItemSearch.aspx?TTBKey=ttbyour67681428001&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
 
   const res = await fetch(url);
   const data = await res.json();

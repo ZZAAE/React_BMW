@@ -6,7 +6,6 @@ import "./Write.css";
 
 const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
-
     const nav = useNavigate();
     const ReviewId = useRef(reviewData.length);
     const [rating, setRating] = useState(0);
@@ -40,9 +39,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
     };
 
     const handleCreate = () => {
-
         if (!reviewInfo) return;
-
         if (!review.trim()) return;
 
         ReviewId.current += 1;
