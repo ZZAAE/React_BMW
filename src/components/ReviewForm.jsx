@@ -2,7 +2,7 @@ import "./ReviewForm.css";
 import Profile from "../assets/writeIcon/Profile.svg?react";
 import Star from "../assets/writeIcon/Star.svg?react";
 import Bubble from "../assets/writeIcon/Bubble.svg?react";
-import Double_quotes from "../assets/writeIcon/Double_quotes.svg?react";
+import DoubleQuotes from "../assets/writeIcon/Double_quotes.svg?react";
 
 const ReviewForm = ({
   rating,
@@ -57,20 +57,25 @@ const ReviewForm = ({
         <Profile className="profile-img" />
       </div>
 
-
-      {/* 리뷰 입력 */}
-      <textarea
-        name="review"
-        value={review}
-        onChange={onChangeReview}
-        className="review-input"
-        disabled={!reviewInfo}
-        placeholder={
-          reviewInfo
-            ? "감상을 입력하세요"
-            : "작품을 선택해주세요."
-        }
-      />
+      <div className="review-input-wrapper">
+        <div className="review-input-header">
+          <DoubleQuotes className="double-quotes-icon" />
+          <div className="review-input-line" />
+        </div>
+        {/* 리뷰 입력 */}
+        <textarea
+          name="review"
+          value={review}
+          onChange={onChangeReview}
+          className="review-input"
+          disabled={!reviewInfo}
+          placeholder={
+            reviewInfo
+              ? "감상을 입력하세요"
+              : "작품을 선택해주세요."
+          }
+        />
+      </div>
 
 
       {/* 완료 버튼 */}

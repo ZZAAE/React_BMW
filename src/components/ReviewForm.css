@@ -54,13 +54,6 @@
     font-size: 15px;
 }
 
-.rating-stars {
-    display: flex;
-    gap: 8px;
-    margin: 30px;
-    align-self: anchor-center;
-}
-
 .bubble-wrapper {
     position: relative;
     display: inline-flex;
@@ -68,17 +61,26 @@
     justify-content: center;
 }
 
+.bubble-wrapper svg:first-child {
+    /* Bubble SVG */
+    position: relative;
+    z-index: 1;
+}
+
 .bubble-wrapper .rating-stars {
+    align-self: anchor-center;
+    gap: 8px;
+    display: flex;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     margin: 0;
+    z-index: 2;
 }
 
 .star-wrapper {
     position: relative;
     display: flex;
+    align-items: center; 
+    margin-bottom: 1px;
 }
 
 .star {
@@ -99,6 +101,35 @@
 
 textarea {
     font-family: Noto Sans, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.review-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.review-input-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+.double-quotes-icon {
+    width: 36px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.review-input-line {
+    flex: 1;
+    height: 2px;
+    background: var(--color-beige);
+}
+
+.review-input {
+    border-top: none;    /* 위쪽 border 제거 */
 }
 
 .review-header {
