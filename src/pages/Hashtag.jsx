@@ -50,7 +50,7 @@ const Hashtag = () => {
     };
 
     return (
-        <div>
+        <div className="hashtag-container">
             <div className="hashtag-header">
                 <h1>해시태그 모아보기</h1>
                 <div className="hashtag-controls">
