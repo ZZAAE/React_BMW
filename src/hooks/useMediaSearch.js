@@ -1,9 +1,9 @@
 //Dummy Data. 나중에 지워야함!!!
-const TMDB_BASE = 'https://api.themoviedb.org/3';
-const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
+const TMDB_BASE = "https://api.themoviedb.org/3";
+const IMG_BASE = "https://image.tmdb.org/t/p/w500";
 const headers = {
   Authorization: `Bearer ${import.meta.env.VITE_TMDB_KEY}`,
-  'Content-Type': 'application/json',
+  "Content-Type": "application/json",
 };
 
 // Search Movie
@@ -16,9 +16,8 @@ async function searchMovie(query, page = 1) {
   const res = await fetch(url, { headers });
   const data = await res.json();
 
-  return data.results.map(movie => (
-    {    
-    id: movie.id,               // id=TMDB. normalizeMovie(id)
+  return data.results.map((movie) => ({
+    id: movie.id, // id=TMDB. normalizeMovie(id)
     title: movie.title,
     thumbnail: movie.poster_path ? `${IMG_BASE}${movie.poster_path}` : null,
   }));
@@ -27,46 +26,62 @@ async function searchMovie(query, page = 1) {
 // "media_info"로 nomalize하여 return
 async function normalizeMovie(id) {
   const [detail, credits] = await Promise.all([
-    fetch(`${TMDB_BASE}/movie/${id}?language=ko-KR`, { headers }).then(r => r.json()), // title, thumbnail, genre, runtime, release, rating
-    fetch(`${TMDB_BASE}/movie/${id}/credits?language=ko-KR`, { headers }).then(r => r.json()), // creator, cast
+    fetch(`${TMDB_BASE}/movie/${id}?language=ko-KR`, { headers }).then((r) =>
+      r.json(),
+    ), // title, thumbnail, genre, runtime, release, rating
+    fetch(`${TMDB_BASE}/movie/${id}/credits?language=ko-KR`, { headers }).then(
+      (r) => r.json(),
+    ), // creator, cast
   ]);
 
   //감독: `crew`에서 `job`으로 검색
-  const director = credits.crew?.find(p => p.job === 'Director')?.name ?? null;
-  const cast = credits.cast?.slice(0, 5).map(p => p.name) ?? [];
+  const director =
+    credits.crew?.find((p) => p.job === "Director")?.name ?? null;
+  const cast = credits.cast?.slice(0, 5).map((p) => p.name) ?? [];
 
   // DELETE: 최종엔 지우기
   console.log(
-      "✔️\ntitle: ",detail.title,
-      "\nthumbnail: ",detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
-      "\ncreator: ",director,
-      "\ngenre: ",detail.genres?.map(g => g.name) ?? [],
-      "\npubDate: ",detail.release_date ?? null, 
-      "\nruntime: ",detail.runtime ?? null,        // minutes
-      "\navgRating: ",detail.vote_average ?? null,    // float: MAX(10.0)
-      "\ncast: ",cast,                        // array
-      "\noverview: ",detail.overview,);
+    "✔️\ntitle: ",
+    detail.title,
+    "\nthumbnail: ",
+    detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
+    "\ncreator: ",
+    director,
+    "\ngenre: ",
+    detail.genres?.map((g) => g.name) ?? [],
+    "\npubDate: ",
+    detail.release_date ?? null,
+    "\nruntime: ",
+    detail.runtime ?? null, // minutes
+    "\navgRating: ",
+    detail.vote_average ?? null, // float: MAX(10.0)
+    "\ncast: ",
+    cast, // array
+    "\noverview: ",
+    detail.overview,
+  );
 
   return {
     media_info: {
       title: detail.title,
       thumbnail: detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
       creator: director,
-      genre: detail.genres?.map(g => g.name) ?? [],
-      pubDate: detail.release_date ?? null, 
-      runtime: detail.runtime ?? null,        // minutes
-      avgRating: detail.vote_average ?? null,    // float: MAX(10.0)
-      cast: cast,                        // array
-      overview: detail.overview,
+      genres: detail.genres?.map((g) => g.name) ?? [],
+      pubDate: detail.release_date
+        ? detail.release_date.replaceAll("-", ".")
+        : null,
+      runtime: detail.runtime ?? null, // minutes
+      rating: detail.vote_average ?? null, // float: MAX(10.0)
+      cast: cast, // array
+      description: detail.overview,
     },
   };
 }
 
 const searchBook = async (query) => {
   console.log(`TTBKey=${import.meta.env.VITE_ALADIN_KEY}`);
-  
-  const url =
-`/aladin/ttb/api/ItemSearch.aspx?TTBKey=${import.meta.env.VITE_ALADIN_KEY}&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
+
+  const url = `/aladin/ttb/api/ItemSearch.aspx?TTBKey=${import.meta.env.VITE_ALADIN_KEY}&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
 
   const res = await fetch(url);
   const data = await res.json();
@@ -74,7 +89,6 @@ const searchBook = async (query) => {
   console.log(data);
 
   return data.item;
-  
 };
 
-  export {searchBook, searchMovie, normalizeMovie};
+export { searchBook, searchMovie, normalizeMovie };

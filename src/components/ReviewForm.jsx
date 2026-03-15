@@ -9,8 +9,11 @@ const ReviewForm = ({
   onChangeRating,
   onChangeReview,
   handleCreate,
+  reviewInfo,
 }) => {
+
   const handleRating = (value) => {
+    if (!reviewInfo) return;
     onChangeRating(value);
   };
 
@@ -19,15 +22,18 @@ const ReviewForm = ({
       <div className="review-header">
         <div className="bubble-wrapper">
           <Bubble />
+
           <div className="rating-stars">
             {[1, 2, 3, 4, 5].map((star) => (
               <div key={star} className="star-wrapper">
+
                 {/* 왼쪽 반 별 */}
                 <span
                   className={
                     rating >= star - 0.5 ? "star filled half" : "star half"
                   }
                   onClick={() => handleRating(star - 0.5)}
+                  style={{ cursor: reviewInfo ? "pointer" : "default" }}
                 >
                   <Star />
                 </span>
@@ -36,15 +42,20 @@ const ReviewForm = ({
                 <span
                   className={rating >= star ? "star filled" : "star"}
                   onClick={() => handleRating(star)}
+                  style={{ cursor: reviewInfo ? "pointer" : "default" }}
                 >
                   <Star />
                 </span>
+
               </div>
             ))}
           </div>
+
         </div>
+
         <Profile className="profile-img" />
       </div>
+
 
       {/* 리뷰 입력 */}
       <textarea
@@ -52,13 +63,24 @@ const ReviewForm = ({
         value={review}
         onChange={onChangeReview}
         className="review-input"
-        placeholder="감상을 입력하세요"
+        disabled={!reviewInfo}
+        placeholder={
+          reviewInfo
+            ? "감상을 입력하세요"
+            : "작품을 선택해주세요."
+        }
       />
 
+
       {/* 완료 버튼 */}
-      <button className="submit-btn" onClick={handleCreate}>
+      <button
+        className="submit-btn"
+        onClick={handleCreate}
+        disabled={!reviewInfo || !review.trim()}
+      >
         완료
       </button>
+
     </div>
   );
 };

@@ -95,7 +95,6 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
             })
             .catch(err => {
                 console.error('Failed to update review', err);
-                // 에러 시 로컬 업데이트
                 setReviewData(prev =>
                     prev.map(item =>
                         item.id === Number(id)
@@ -128,7 +127,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
                     title: reviewInfo.title,
                     creator: reviewInfo.creator,
                     thumbnail: reviewInfo.thumbnail,
-                    genres: reviewInfo. genres,
+                    genres: reviewInfo.genres,
                     pubDate: reviewInfo.pubDate,
                     description: reviewInfo.description,
                 }
@@ -146,7 +145,6 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
             })
             .catch(err => {
                 console.error('Failed to save review', err);
-                // 에러 시 로컬 추가
                 setReviewData(prev => [...prev, addNewData]);
                 nav("/", { replace: true });
             });
@@ -189,6 +187,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
                         onChangeRating={addRating}
                         onChangeReview={addReview}
                         handleCreate={handleSave}
+                        reviewInfo={reviewInfo}
                     />
 
                 </div>

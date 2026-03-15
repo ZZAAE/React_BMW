@@ -39,7 +39,7 @@ const MediaSelection = ({ reviewInfo, setReviewInfo, plusRef }) => {
 
                     <div className="media">
                         <div className="media-description-label">
-                            저자
+                            {(!reviewInfo.runtime) ? "저자" : "감독"}
                         </div>
                         <div className="media-description-child">
                             {reviewInfo.creator}
@@ -53,7 +53,7 @@ const MediaSelection = ({ reviewInfo, setReviewInfo, plusRef }) => {
 
                     <div className="media">
                         <div className="media-description-label">
-                            출판
+                            {(!reviewInfo.runtime) ? "출판" : "감독"}
                         </div>
                         <div className="media-description-child">
                             {reviewInfo.pubDate}
