@@ -88,3 +88,20 @@
     object-fit: cover;
     border-radius: 4px;
 }
+.search-container ul {
+    position: absolute;
+    top: 45px;
+
+    width: 380px;
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    background: white;
+    color: #000;        /* 추가 */
+    border-radius: 10px;
+    border: 1px solid #e2e2e2;
+
+    list-style: none;
+    padding: 6px 0;
+}

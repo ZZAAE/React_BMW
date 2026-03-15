@@ -41,29 +41,20 @@ async function normalizeMovie(id) {
 
   // DELETE: 최종엔 지우기
   console.log(
-    "✔️\ntitle: ",
-    detail.title,
-    "\nthumbnail: ",
-    detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
-    "\ncreator: ",
-    director,
-    "\ngenre: ",
-    detail.genres?.map((g) => g.name) ?? [],
-    "\npubDate: ",
-    detail.release_date ?? null,
-    "\nruntime: ",
-    detail.runtime ?? null, // minutes
-    "\navgRating: ",
-    detail.vote_average ?? null, // float: MAX(10.0)
-    "\ncast: ",
-    cast, // array
-    "\noverview: ",
-    detail.overview,
-  );
+      "✔️\ntitle: ",detail.title,
+      "\nthumbnail: ",detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
+      "\ncreator: ",director,
+      "\ngenre: ",detail.genres?.map(g => g.name) ?? [],
+      "\npubDate: ",detail.release_date ?? null, 
+      "\nruntime: ",detail.runtime ?? null,        // minutes
+      "\nrating: ",detail.vote_average ?? null,    // float: MAX(10.0)
+      "\ncast: ",cast,                        // array
+      "\ndescription: ",detail.overview ?? "없음",);
 
   return {
     media_info: {
       title: detail.title,
+      media_type: "movie",
       thumbnail: detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
       creator: director,
       genres: detail.genres?.map((g) => g.name) ?? [],

@@ -17,7 +17,7 @@ const AllReviews = ({ reviewData }) => {
     return (
         <div>
             <h1>ALL REVIEWS</h1>
-            <ReviewFilter onFilter={setFilterType} />
+            <ReviewFilter onFilter={setFilterType}/>
             <ReviewOrder onOrder={setOrderType} orderType={orderType} />
             <ReviewList data={sortedData} className="grid-layout" />
         </div>

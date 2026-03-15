@@ -15,7 +15,7 @@ function App() {
 
   // 서버에서 리뷰 데이터 가져오기
   useEffect(() => {
-    fetch('/api/reviews')
+    fetch('/api/review')
       .then(res => res.json())
       .then(data => setReviewData(data))
       .catch(err => console.error('Failed to fetch reviews', err));
@@ -44,7 +44,7 @@ function App() {
             }
           />
 
-          <Route path="/reviews/:id" element={<Preview reviewData={reviewData} setReviewData={setReviewData} />} />
+          <Route path="/review/:id" element={<Preview reviewData={reviewData} setReviewData={setReviewData} />} />
 
           <Route path="/AllReviews" element={<AllReviews reviewData={reviewData} />} />
           <Route path="/Hashtag" element={<Hashtag />} />

@@ -1,12 +1,15 @@
 import { useState } from "react";
 import ReviewFilter from "../components/ReviewFilter";
 import ReviewList from "../components/ReviewList";
+import WeeklyCarousel from "../components/WeeklyCarousel";
 
 import { dummyReviews } from "../hooks/dummyReviews";
 import getWeeklyRange from "../util/getWeeklyRange";
 
+import "./Home.css";
+
 const Home = () => {
-    const [filterType, setFilterType] = useState("all")
+    const [filterType, setFilterType] = useState("all");
 
     // Filtered Data
     const { monday, sunday } = getWeeklyRange();
@@ -23,18 +26,15 @@ const Home = () => {
         filterType === "all" ? true : item.media_type === filterType);
 
     return (
-        <>
-            <div>
-                <h2>THIS WEEK</h2>
-                <ReviewList data={weeklyData} className="scroll-layout" />
-            </div>
+        <div className="home-container">
+            <WeeklyCarousel data={weeklyData} />
 
             <div>
                 <h2>ALL REVIEWS</h2>
                 <ReviewFilter onFilter={setFilterType} />
                 <ReviewList data={filteredData} className="grid-layout" />
             </div>
-        </>
+        </div >
     );
 };
 

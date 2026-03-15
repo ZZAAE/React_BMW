@@ -69,7 +69,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
         tag: tags,
       };
 
-      fetch(`/api/reviews/${id}`, {
+      fetch(`/api/review/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updateData),
@@ -128,7 +128,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
         },
       };
 
-      fetch("/api/reviews", {
+      fetch("/api/review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(addNewData),

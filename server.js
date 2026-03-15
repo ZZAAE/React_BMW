@@ -27,13 +27,13 @@ let reviews = [
   }
 ];
 
-// GET /api/reviews - 전체 리뷰 가져오기
-app.get('/api/reviews', (req, res) => {
+// GET /api/review - 전체 리뷰 가져오기
+app.get('/api/review', (req, res) => {
   res.json(reviews);
 });
 
-// GET /api/reviews/:id - 특정 리뷰 가져오기
-app.get('/api/reviews/:id', (req, res) => {
+// GET /api/review/:id - 특정 리뷰 가져오기
+app.get('/api/review/:id', (req, res) => {
   const id = req.params.id;
   const review = reviews.find(r => r.id == id);
   if (review) {
@@ -43,8 +43,8 @@ app.get('/api/reviews/:id', (req, res) => {
   }
 });
 
-// POST /api/reviews - 새 리뷰 추가
-app.post('/api/reviews', (req, res) => {
+// POST /api/review - 새 리뷰 추가
+app.post('/api/review', (req, res) => {
   const newReview = req.body;
   newReview.id = Date.now(); // 간단한 ID 생성
   reviews.push(newReview);
@@ -55,8 +55,8 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-// PUT /api/reviews/:id - 리뷰 수정
-app.put('/api/reviews/:id', (req, res) => {
+// PUT /api/review/:id - 리뷰 수정
+app.put('/api/review/:id', (req, res) => {
   const id = Number(req.params.id);
   const updatedData = req.body;
 

@@ -2,12 +2,33 @@
   font-family: Noto Sans, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color-scheme: light;
 
-  color-scheme: light dark;
-  background-color: #242424;
+    --color-dark-brown: #584635;
+    --color-dark-gray: #3C3C3C;
+    --color-beige: #DBC9B8;
+    --color-ligth-beige: #F8F2EC;
+    --color-white: #FFF;
+    --color-black: #000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* 라이트 모드 */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--color-dark-brown);
+    background-color: var(--color-white);
+  }
+}
+
+/* 다크 모드 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--color-light-beige);
+    background-color: var(--color-dark-gray);
+  }
 }
