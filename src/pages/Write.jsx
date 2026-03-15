@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import MediaSelection from "../components/MediaSelection";
 import ReviewForm from "../components/ReviewForm";
+import Back from "../assets/writeIcon/Back.svg?react";
 import "./Write.css";
 
 const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
@@ -127,7 +128,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
                     title: reviewInfo.title,
                     creator: reviewInfo.creator,
                     thumbnail: reviewInfo.thumbnail,
-                    genre: reviewInfo.genre,
+                    genres: reviewInfo. genres,
                     pubDate: reviewInfo.pubDate,
                     description: reviewInfo.description,
                 }
@@ -162,6 +163,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
                 {/* LEFT */}
                 <div className="write-left">
+                    <Back className="back-button" width="22" height="22" onClick={() => nav(-1)} />
 
                     <MediaSelection
                         reviewInfo={reviewInfo}

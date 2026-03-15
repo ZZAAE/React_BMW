@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./BtnAction.css";
 
 const BtnAction = ({ setReviewData, id }) => {
   const nav = useNavigate();
@@ -17,8 +18,13 @@ const BtnAction = ({ setReviewData, id }) => {
 
   return (
     <div className="BtnUD">
-      <button onClick={handleUpdate}>수정</button>
-      <button onClick={handleDelete}>삭제</button>
+      <button className="action-btn edit-btn" onClick={handleUpdate}>
+        수정
+      </button>
+
+      <button className="action-btn delete-btn" onClick={handleDelete}>
+        삭제
+      </button>
     </div>
   );
 };

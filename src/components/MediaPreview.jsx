@@ -2,6 +2,8 @@ import "./MediaSelection.css";
 
 
 const MediaPreview = ({ review }) => {
+
+  console.log("MediaPreview review:", review);
   return (
     <div className="media-preview">
       <img src={review.media_info.thumbnail} alt={review.media_info.title} />
@@ -9,8 +11,8 @@ const MediaPreview = ({ review }) => {
       <div className="media-title">{review.media_info.title}</div>
 
       <div className="media-genre">
-        {review.genres &&
-          review.genres.map((genre, index) => (
+        {review.media_info.genres &&
+          review.media_info.genres.map((genre, index) => (
             <span key={index} className="genre-tag">
               {genre}
             </span>

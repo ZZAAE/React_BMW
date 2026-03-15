@@ -5,6 +5,7 @@ const MediaSelection = ({ reviewInfo, setReviewInfo, plusRef }) => {
 
 
     return (
+
         <div className="media-section">
 
             {!reviewInfo ? (

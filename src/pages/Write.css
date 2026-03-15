@@ -18,11 +18,12 @@
 /* LEFT */
 .write-left {
     width: 40%;
-    padding: 20px 30px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; /* 세로 가운데 정렬 */
+    position: relative;
 }
 
 /* + 버튼 */
@@ -37,8 +38,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-top: 310px;
-    margin-bottom: 390px;
+    margin-bottom: 300px;
+
 }
 
 /* RIGHT */
@@ -51,4 +52,13 @@
     justify-content: space-between;
     background: white;
     border-radius: 0px 25px 25px 0px;
+}
+
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    color: #5a4636;
+    cursor: pointer;
+    z-index: 10;
 }

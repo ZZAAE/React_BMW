@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MediaPreview from "../components/MediaPreview";
 import ReviewPreview from "../components/ReviewPreview";
 import BtnAction from "../components/BtnAction";
+import Back from "../assets/writeIcon/Back.svg?react";
 import "./Write.css";
 
 const Preview = ({reviewData ,setReviewData}) => {
@@ -10,6 +11,7 @@ const Preview = ({reviewData ,setReviewData}) => {
   const [review, setReview] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const nav = useNavigate();
 
   useEffect(() => {
     fetch(`/api/reviews/${id}`)
@@ -39,6 +41,7 @@ const Preview = ({reviewData ,setReviewData}) => {
         <div className="write-container">
           {/* LEFT */}
           <div className="write-left">
+            <Back className="back-button" width="22" height="22" onClick={() => nav(-1)} />
             <MediaPreview review={review} />
           </div>
 
