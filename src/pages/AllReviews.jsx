@@ -3,6 +3,7 @@ import ReviewList from "../components/ReviewList";
 import ReviewFilter from "../components/ReviewFilter";
 import ReviewOrder from "../components/ReviewOrder";
 import useReviewList from "../util/useReviewList";
+import "./AllReviews.css";
 
 const AllReviews = ({ reviewData }) => {
     const [filterType, setFilterType] = useState("all");
@@ -15,11 +16,17 @@ const AllReviews = ({ reviewData }) => {
     const sortedData = useReviewList(filteredData, orderType);
 
     return (
-        <div>
-            <h1>ALL REVIEWS</h1>
-            <ReviewFilter onFilter={setFilterType}/>
-            <ReviewOrder onOrder={setOrderType} orderType={orderType} />
-            <ReviewList data={sortedData} className="grid-layout" />
+        <div className="allreviews-container">
+            <div className="allreviews-header">
+                <h1>ALL REVIEWS</h1>
+                <div className="allreviews-controls">
+                    <ReviewFilter onFilter={setFilterType}/>
+                    <ReviewOrder onOrder={setOrderType} orderType={orderType} />
+                </div>
+            </div>
+            <div className="allreviews-list">
+                <ReviewList data={sortedData} className="grid-layout" />
+            </div>
         </div>
     );
 };

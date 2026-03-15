@@ -11,7 +11,6 @@ const headers = {
 // Promise를 사용하면 서버가 필요한 정보를 한 번에 호출할 수 있음.
 // Promise.all: Promise가 가져오는 건 하나의 객체. 모든 객체를 동시에 반환할때는 all로 줘야함
 async function searchMovie(query, page = 1) {
-  console.log("serchMovie.js!");
   const url = `${TMDB_BASE}/search/movie?query=${encodeURIComponent(query)}&language=ko-KR&page=${page}`;
   const res = await fetch(url, { headers });
   const data = await res.json();
@@ -70,8 +69,6 @@ async function normalizeMovie(id) {
 }
 
 const searchBook = async (query) => {
-  console.log(`TTBKey=${import.meta.env.VITE_ALADIN_KEY}`);
-
   const url = `/aladin/ttb/api/ItemSearch.aspx?TTBKey=${import.meta.env.VITE_ALADIN_KEY}&Query=${encodeURIComponent(query)}&QueryType=Title&SearchTarget=Book&MaxResults=10&Output=JS&Version=20131101&OptResult=subInfo`;
 
   const res = await fetch(url);

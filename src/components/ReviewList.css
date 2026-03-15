@@ -13,13 +13,13 @@
     object-position: bottom;
 }
 
-/* scroll-layout 공통 */
+/* scroll-layout */
 .scroll-layout {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     gap: 16px;
-    align-items: center; 
+    align-items: center;
     padding: 20px 0;
 }
 
@@ -32,7 +32,6 @@
     transition: transform 0.2s;
 }
 
-/* 일반 아이템 */
 .scroll-layout .review-list-item img {
     width: 150px;
     height: 225px;
@@ -49,21 +48,43 @@
 
 .scroll-layout .review-list-item span {
     font-size: 12px;
-    color: #4B3B2F;
-    background: #DBC9B8;
+    color: var(--color-dark-brown);
+    background: var(--color-beige);
     padding: 3px 12px;
     border-radius: 99px;
 }
 
-/* 가운데 아이템 - 1.5배 */
 .scroll-layout .review-list-item.featured img {
-    width: 225px;   /* 150 * 1.5 */
-    height: 337px;  /* 225 * 1.5 */
+    width: 225px;
+    height: 337px;
 }
 
 /* grid-layout */
 .grid-layout {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;        /* 추가 */
+    overflow: hidden;   /* 추가 */
+}
+
+.shelf-row {
+    margin-bottom: 30px;
+}
+
+.shelf-books {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-bottom: -3px; 
+    justify-content: center;  
+}
+
+.shelf-svg {
+    display: block;
+    width: 100%;            /* 컨테이너 꽉 채우기 */
+    height: 10px;               /* 고정 */
+    overflow: visible;          /* 그림자 잘림 방지 */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }

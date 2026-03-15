@@ -1,0 +1,32 @@
+.allreviews-container {
+    padding: 140px 90px 0 90px;
+    background-color: #FEF9F3;
+    min-height: 100vh;
+    color: var(--color-dark-brown);
+}
+
+.allreviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.allreviews-header h1 {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-dark-brown);
+}
+
+.allreviews-controls {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.allreviews-list {
+    margin-top: 70px;
+    overflow: hidden;
+    width: 100%;
+}

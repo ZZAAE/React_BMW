@@ -14,18 +14,18 @@
 }
 
 .edit-btn {
-    background: #ffffff;
-    color: #4B3B2F;
-    border: solid #4B3B2F 1px;
+    background: var(--color-white);
+    color: var(--color-dark-brown);
+    border: solid var(--color-dark-brown) 1px;
 }
 
 .edit-btn:hover {
-    background: #CFC2B3;
+    background: var(--color-beige);
 }
 
 .delete-btn {
-    background: #584635;
-    color: #ffffff;
+    background: var(--color-dark-brown);
+    color: var(--color-white);
 }
 
 .delete-btn:hover {

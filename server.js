@@ -9,23 +9,8 @@ app.use(cors());
 app.use(express.json());
 
 // In-memory storage for reviews (replace with DB later)
-let reviews = [
-  {
-    id: 1,
-    media_type: "book",
-    rating: 4.5,
-    review: "코드를 바라보는 시각이 완전히 바뀌었다.",
-    created_at: "2026-01-03T00:00:00.000Z",
-    updated_at: "2026-01-03T00:00:00.000Z",
-    tag: ["IT/기술", "프로그래밍"],
-    media_info: {
-      title: "클린 코드",
-      creator: "로버트 C. 마틴",
-      thumbnail: "https://bookthumb-phinf.pstatic.net/thumb/137/995/13799541.jpg",
-      genre: "IT/기술"
-    }
-  }
-];
+import { dummyReviews } from './src/hooks/dummyReviews.js';
+let reviews = dummyReviews;
 
 // GET /api/review - 전체 리뷰 가져오기
 app.get('/api/review', (req, res) => {

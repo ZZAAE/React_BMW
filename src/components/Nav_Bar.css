@@ -1,18 +1,11 @@
-:root {
-    --color-dark-brown: #584635;
-    --color-dark-gray: #3C3C3C;
-    --color-light-beige: #DBC9B8;
-    --color-white: #FFFFFF;
-}
-
 .nav-bar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 120px; /* 80px → 120px */
+    width: 120px;
     height: 100vh;
-    background-color: var(--color-light-beige);
+    background-color: var(--color-beige);   /* --color-light-beige → --color-beige */
     padding: 28px 0;
     position: fixed;
     left: 0;
@@ -49,10 +42,8 @@
 .nav-btn img {
     width: 26px;
     height: 26px;
-    
 }
 
-/* 활성화 시 배경 제거, 색상만 변경 */
 .nav-btn.active {
     background-color: transparent;
     box-shadow: none;
@@ -60,7 +51,6 @@
     background-color: var(--color-white);
 }
 
-/* 호버도 배경 제거 */
 .nav-btn:hover:not(.active) {
     background-color: rgba(255, 255, 255, 0.5);
     outline: none;

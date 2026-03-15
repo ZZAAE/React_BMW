@@ -1,11 +1,11 @@
 .review-filter {
-    
+
 }
 
 button {
-    background: #ffffff;
-    color: #5A4636;
-    border: solid 1px #5A4636;
+    background: var(--color-white);        /* #ffffff */
+    color: var(--color-dark-brown);        /* #5A4636 */
+    border: solid 1px var(--color-dark-brown);
     border-radius: 20px;
     padding: 8px 16px;
     margin-right: 10px;
@@ -15,6 +15,6 @@ button {
 }
 
 button.active {
-    background: #5A4636;
-    color: #ffffff;
+    background: var(--color-dark-brown);   /* #5A4636 */
+    color: var(--color-white);             /* #ffffff */
 }

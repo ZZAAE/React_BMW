@@ -8,7 +8,7 @@
 .hashtag-header h1 {
     font-size: 22px;
     font-weight: 500;
-    color: #4B3B2F;
+    color: var(--color-dark-brown);    /* #4B3B2F */
     margin: 0;
 }
 
