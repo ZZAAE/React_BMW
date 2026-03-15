@@ -12,7 +12,7 @@ const ReviewList = ({ data, className }) => {
                     key={item.id}
                     className={`review-list-item ${className === "scroll-layout" && index === centerIndex ? "featured" : ""}`}
                     onClick={() => navigate(`/review/${item.id}`)} >
-                    <img src={item.media_info.thumbnail} alt={item.media_info.title} />
+                    <img src={item.media_info.thumbnail} alt={item.media_info.title} draggable="false" />
 
                     {className === "scroll-layout" && (
                         <>

@@ -6,8 +6,10 @@
 
     --color-dark-brown: #584635;
     --color-dark-gray: #3C3C3C;
-    --color-light-beige: #DBC9B8;
-    --color-white: #FFFFFF;
+    --color-beige: #DBC9B8;
+    --color-ligth-beige: #F8F2EC;
+    --color-white: #FFF;
+    --color-black: #000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,7 +21,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--color-dark-brown);
-    background-color: #ffffff;
+    background-color: var(--color-white);
   }
 }
 
@@ -27,6 +29,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color: var(--color-light-beige);
-    background-color: #242424;
+    background-color: var(--color-dark-gray);
   }
 }
