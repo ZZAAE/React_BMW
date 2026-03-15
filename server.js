@@ -54,3 +54,23 @@ app.post('/api/reviews', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// PUT /api/reviews/:id - 리뷰 수정
+app.put('/api/reviews/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const updatedData = req.body;
+
+  const index = reviews.findIndex(r => r.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: 'Review not found' });
+  }
+
+  reviews[index] = {
+    ...reviews[index],
+    ...updatedData,
+    id: id
+  };
+
+  res.json(reviews[index]);
+});

@@ -50,6 +50,7 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
                 rating: item.rating,
                 description: item.description,
                 pubDate: item.pubDate,
+                runtime: (item.runtime) ? item.runtime : null,
             });
         }
         else if (typeRef.current === 1) {
@@ -58,6 +59,8 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
         }
         setShowResults(false);
         setQuery("");
+
+        console.log(!item.runtime ? "movie" : "book");
     }
 
 

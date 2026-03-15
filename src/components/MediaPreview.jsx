@@ -20,7 +20,7 @@ const MediaPreview = ({ review }) => {
       </div>
 
       <div className="media">
-        <div className="media-description-label">저자</div>
+        <div className="media-description-label">{(!review.media_info.runtime) ? "저자" : "감독"}</div>
         <div className="media-description-child">{review.media_info.creator}</div>
       </div>
 
@@ -29,7 +29,7 @@ const MediaPreview = ({ review }) => {
                     </div> */}
 
       <div className="media">
-        <div className="media-description-label">출판</div>
+        <div className="media-description-label">{(!review.media_info.runtime) ? "출판" : "개봉"}</div>
         <div className="media-description-child">{review.media_info.pubDate}</div>
       </div>
 

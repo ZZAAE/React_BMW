@@ -31,7 +31,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/review/:id" element={<Preview />} />
 
           <Route
             path="/Write"
@@ -45,7 +44,7 @@ function App() {
             }
           />
 
-          <Route path="/:id" element={<Preview reviewData={reviewData} setReviewData={setReviewData} />} />
+          <Route path="/reviews/:id" element={<Preview reviewData={reviewData} setReviewData={setReviewData} />} />
 
           <Route path="/AllReviews" element={<AllReviews reviewData={reviewData} />} />
           <Route path="/Hashtag" element={<Hashtag />} />

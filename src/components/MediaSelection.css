@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    
 }
 
 /* 선택된 미디어 카드 */
@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
 
     gap: 6px;
 }

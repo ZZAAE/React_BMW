@@ -2,6 +2,7 @@ import "./ReviewForm.css";
 import Profile from "../assets/writeIcon/Profile.svg?react";
 import Star from "../assets/writeIcon/Star.svg?react";
 import Bubble from "../assets/writeIcon/Bubble.svg?react";
+import Double_quotes from "../assets/writeIcon/Double_quotes.svg?react";
 
 const ReviewForm = ({
   rating,

@@ -1,15 +1,14 @@
 .write-page {
-    height: 100vh;
+    min-height: 100vh;
     background: #F3EEE8;
     display: flex;
-    flex-direction: row; /* 수평 정렬 추가 */
 }
 
 /* 전체 컨테이너 */
 .write-container {
     flex: 1;
-    display: flex; /* 수평 정렬 설정 */
-    flex-direction: row; /* 수평 정렬 설정 */
+    display: flex;
+    flex-direction: row;
     background: #F8F5F1;
     border-radius: 24px;
     margin: 20px;
@@ -22,8 +21,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* 세로 가운데 정렬 */
+    justify-content: center;
     position: relative;
+    height: 100%;
 }
 
 /* + 버튼 */
@@ -38,18 +38,17 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 300px;
-
+    margin-bottom: 330px;
 }
 
 /* RIGHT */
 .write-right {
     width: 60%;
-    padding: 60px 110px;
+    padding: 60px 5%; /* 110px → 반응형 padding */
     border-left: 1px solid #E2D8CC;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background: white;
     border-radius: 0px 25px 25px 0px;
 }
@@ -61,4 +60,33 @@
     color: #5a4636;
     cursor: pointer;
     z-index: 10;
+}
+
+
+/* ---------------------- */
+/* 반응형 */
+/* ---------------------- */
+
+@media (max-width: 900px) {
+
+    .write-container {
+        flex-direction: column;
+    }
+
+    .write-left,
+    .write-right {
+        width: 100%;
+    }
+
+    .write-right {
+        border-left: none;
+        border-top: 1px solid #E2D8CC;
+        border-radius: 0 0 25px 25px;
+        padding: 40px 30px;
+    }
+
+    .add-button {
+        margin-bottom: 40px;
+    }
+
 }
