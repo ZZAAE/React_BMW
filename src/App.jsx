@@ -45,6 +45,8 @@ function App() {
             }
           />
 
+          <Route path="/Preview/:id" element={<Preview reviewData={reviewData} setReviewData={setReviewData} />} />
+
           <Route path="/AllReviews" element={<AllReviews reviewData={reviewData} />} />
           <Route path="/Hashtag" element={<Hashtag />} />
         </Routes>

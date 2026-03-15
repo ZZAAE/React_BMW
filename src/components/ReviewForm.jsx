@@ -49,12 +49,12 @@ const ReviewForm = ({ rating, review, onChangeRating, onChangeReview, handleCrea
                 placeholder="감상을 입력하세요"
             />
 
-            {/* 작성 버튼 */}
+            {/* 완료 버튼 */}
             <button
                 className="submit-btn"
                 onClick={handleCreate}
             >
-                작성
+                완료
             </button>
 
         </div>
