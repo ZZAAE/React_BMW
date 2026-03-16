@@ -1,6 +1,6 @@
 .write-page {
     min-height: 100vh;
-    background: var(--color-ligth-beige);               /* --color-light-beige(#F8F2EC)와 유사 */
+    background: #F3EEE8;              /* --color-light-beige(#F8F2EC)와 유사 */
     display: flex;
 }
 
