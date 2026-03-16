@@ -25,25 +25,20 @@ async function searchMovie(query, page = 1) {
 // "media_info"로 nomalize하여 return
 async function normalizeMovie(id) {
   const [detail, credits] = await Promise.all([
-    fetch(`${TMDB_BASE}/movie/${id}?language=ko-KR`, { headers }).then((r) =>
-      r.json(),
-    ), // title, thumbnail, genre, runtime, release, rating
-    fetch(`${TMDB_BASE}/movie/${id}/credits?language=ko-KR`, { headers }).then(
-      (r) => r.json(),
-    ), // creator, cast
+    fetch(`${TMDB_BASE}/movie/${id}?language=ko-KR`, { headers }).then((r) => r.json()),
+    fetch(`${TMDB_BASE}/movie/${id}/credits?language=ko-KR`, { headers }).then((r) => r.json()),
   ]);
 
-  //감독: `crew`에서 `job`으로 검색
-  const director =
-    credits.crew?.find((p) => p.job === "Director")?.name ?? null;
+  const director = credits.crew?.find((p) => p.job === "Director")?.name ?? null;
   const cast = credits.cast?.slice(0, 5).map((p) => p.name) ?? [];
 
+  // ✅ media_info 감싸기 제거 → flat 구조
   return {
     media_type: "movie",
     title: detail.title,
     thumbnail: detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
     creator: director,
-    genres: detail.genres?.map((g) => g.name) ?? [],
+    genres: detail.genres?.map(g => g.name) ?? [],
     pubDate: detail.release_date ? detail.release_date.replaceAll("-", ".") : null,
     runtime: detail.runtime ?? null,
     rating: detail.vote_average ?? null,

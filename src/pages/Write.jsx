@@ -65,7 +65,9 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
     if (!reviewInfo) return;
     if (!review.trim()) return;
 
-    const tags = selectTag(review);
+    const hashTags = selectTag(review);
+    const genreTags = reviewInfo.genres ?? [];
+    const tags = [...new Set([...genreTags, ...hashTags])];
 
     // 수정
     if (id) {
@@ -167,7 +169,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
           <MediaSelection
             reviewInfo={reviewInfo}
-            dataType = {reviewInfo?.media_type}
+            dataType={reviewInfo?.media_type}
             setReviewInfo={setReviewInfo}
             plusRef={plusRef}
           />
