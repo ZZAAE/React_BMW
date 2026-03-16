@@ -32,7 +32,14 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
     if (editReview) {
       setRating(editReview.rating);
       setReview(editReview.review);
-      setReviewInfo(editReview.media_info);
+      setReviewInfo({
+        ...editReview.media_info,
+        media_type: editReview.media_type,  // ← 추가
+        rating: editReview.rating,          // ← 추가
+        genres: editReview.media_info.genre
+          ? [editReview.media_info.genre]
+          : [],                             // ← genre 문자열 → 배열 변환
+      });
     }
   }, [id, reviewData, setReviewInfo]);
 
@@ -94,12 +101,12 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
             prev.map((item) =>
               item.id === Number(id)
                 ? {
-                    ...item,
-                    rating: rating,
-                    review: review,
-                    updated_at: new Date().toISOString(),
-                    tag: tags,
-                  }
+                  ...item,
+                  rating: rating,
+                  review: review,
+                  updated_at: new Date().toISOString(),
+                  tag: tags,
+                }
                 : item,
             ),
           );
@@ -160,6 +167,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
           <MediaSelection
             reviewInfo={reviewInfo}
+            dataType = { reviewInfo.media_type}
             setReviewInfo={setReviewInfo}
             plusRef={plusRef}
           />

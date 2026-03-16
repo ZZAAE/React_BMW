@@ -29,8 +29,7 @@ function App() {
       <Nav_Bar />
       <div className="page-content">
         <Routes>
-          <Route path="/" element={<Home />} />
-
+          <Route path="/" element={<Home reviewData={reviewData} />} />
 
           <Route
             path="/Write"

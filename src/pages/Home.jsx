@@ -3,21 +3,20 @@ import ReviewFilter from "../components/ReviewFilter";
 import ReviewList from "../components/ReviewList";
 import WeeklyCarousel from "../components/WeeklyCarousel";
 
-import { dummyReviews } from "../hooks/dummyReviews";
 import getWeeklyRange from "../util/getWeeklyRange";
 
 import "./Home.css";
 
-const Home = () => {
+const Home = ({reviewData}) => {
     const [filterType, setFilterType] = useState("all");
 
     const { monday, sunday } = getWeeklyRange();
-    const weeklyData = dummyReviews.filter((item) => {
+    const weeklyData = reviewData.filter((item) => {
         const updatedAt = new Date(item.updated_at);
         return updatedAt >= monday && updatedAt <= sunday;
     });
 
-    const filteredData = dummyReviews.filter((item) =>
+    const filteredData = reviewData.filter((item) =>
         filterType === "all" ? true : item.media_type === filterType);
 
     return (

@@ -1,9 +1,9 @@
 import BtnSearch from "./BtnSearch";
 import "./MediaSelection.css";
 
-const MediaSelection = ({ reviewInfo, setReviewInfo, plusRef }) => {
+const MediaSelection = ({ reviewInfo, dataType, setReviewInfo, plusRef }) => {
 
-    console.log(reviewInfo)
+    console.log("ReviewInfo:", reviewInfo)
 
     return (
 
@@ -41,7 +41,7 @@ const MediaSelection = ({ reviewInfo, setReviewInfo, plusRef }) => {
                     <div className="media">
                         <div className="media-description-label">
                             {/* {(!reviewInfo.runtime) ? "저자" : "감독"} */}
-                            {reviewInfo.media_type === "movie" ? "감독" : "저자"}
+                            {dataType === "movie" ? "감독" : "저자"}
                         </div>
                         <div className="media-description-child">
                             {reviewInfo.creator}
@@ -56,14 +56,14 @@ const MediaSelection = ({ reviewInfo, setReviewInfo, plusRef }) => {
                     <div className="media">
                         <div className="media-description-label">
                             {/* {(!reviewInfo.runtime) ? "출판" : "개봉"} */}
-                            {reviewInfo.media_type === "movie" ? "개봉" : "출판"}
+                            {dataType === "movie" ? "개봉" : "출판"}
                         </div>
                         <div className="media-description-child">
                             {reviewInfo.pubDate}
                         </div>
                     </div>
 
-                    {reviewInfo.media_type === "movie" && (
+                    {dataType === "movie" && (
                         <div className="media">
                             <div className="media-description-label">상영시간</div>
                             <div className="media-description-child">{reviewInfo.runtime}분</div>

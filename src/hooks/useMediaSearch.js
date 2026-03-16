@@ -39,20 +39,16 @@ async function normalizeMovie(id) {
   const cast = credits.cast?.slice(0, 5).map((p) => p.name) ?? [];
 
   return {
-    media_info: {
-      title: detail.title,
-      media_type: "movie",
-      thumbnail: detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
-      creator: director,
-      genres: detail.genres?.map((g) => g.name) ?? [],
-      pubDate: detail.release_date
-        ? detail.release_date.replaceAll("-", ".")
-        : null,
-      runtime: detail.runtime ?? null, // minutes
-      rating: detail.vote_average ?? null, // float: MAX(10.0)
-      cast: cast, // array
-      description: detail.overview,
-    },
+    media_type: "movie",
+    title: detail.title,
+    thumbnail: detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : null,
+    creator: director,
+    genres: detail.genres?.map((g) => g.name) ?? [],
+    pubDate: detail.release_date ? detail.release_date.replaceAll("-", ".") : null,
+    runtime: detail.runtime ?? null,
+    rating: detail.vote_average ?? null,
+    cast: cast,
+    description: detail.overview,
   };
 }
 
