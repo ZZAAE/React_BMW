@@ -167,7 +167,7 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
 
           <MediaSelection
             reviewInfo={reviewInfo}
-            dataType = { reviewInfo.media_type}
+            dataType = {reviewInfo?.media_type}
             setReviewInfo={setReviewInfo}
             plusRef={plusRef}
           />
