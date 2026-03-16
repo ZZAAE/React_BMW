@@ -46,7 +46,7 @@ function App() {
           <Route path="/review/:id" element={<Preview reviewData={reviewData} setReviewData={setReviewData} />} />
 
           <Route path="/AllReviews" element={<AllReviews reviewData={reviewData} />} />
-          <Route path="/Hashtag" element={<Hashtag />} />
+          <Route path="/Hashtag" element={<Hashtag data = {reviewData} />} />
         </Routes>
       </div>
     </BrowserRouter>

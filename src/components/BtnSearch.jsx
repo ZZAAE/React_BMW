@@ -54,7 +54,7 @@ const BtnSearch = ({ setReviewInfo, plusRef }) => {
         }
         else if (typeRef.current === 1) {
             const normalized = await normalizeMovie(item.id);
-            setReviewInfo(normalized.media_info);
+            setReviewInfo(normalized);
         }
         setShowResults(false);
         setQuery("");

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { dummyReviews } from "../hooks/dummyReviews";
 import ReviewFilter from "../components/ReviewFilter";
 import ReviewOrder from "../components/ReviewOrder";
 import TagCard from "../components/TagCard";
@@ -7,15 +6,15 @@ import TagPopup from "../components/TagPopup";
 
 import "./Hashtag.css";
 
-const Hashtag = () => {
+const Hashtag = ({data}) => {
     const [filterType, setFilterType] = useState("all");
     const [orderType, setOrderType] = useState("latest");
     const [selectedTag, setSelectedTag] = useState(null);      // 선택된 태그
     const [popupReviews, setPopupReviews] = useState([]);       // 팝업에 띄울 리뷰
 
     const filteredData = filterType === "all"
-        ? dummyReviews
-        : dummyReviews.filter((item) => item.media_type === filterType);
+        ? data
+        : data.filter((item) => item.media_type === filterType);
 
     const groupByTag = (reviews) => {
         const tagMap = {};
