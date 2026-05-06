@@ -86,7 +86,8 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
               item.id === Number(id) ? { ...item, ...updateData } : item,
             ),
           );
-          nav("/", { replace: true });
+          // nav("/", { replace: true });
+          nav("/AllReviews", { replace: true });
         })
         .catch((err) => {
           console.error("Failed to update review", err);
@@ -103,7 +104,8 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
                 : item,
             ),
           );
-          nav("/", { replace: true });
+          // nav("/", { replace: true });
+          nav("/AllReviews", { replace: true });
         });
       console.log("handleSave updateData:", updateData);
     }
@@ -134,14 +136,16 @@ const Write = ({ reviewData, setReviewData, reviewInfo, setReviewInfo }) => {
         body: JSON.stringify(addNewData),
       })
         .then((res) => res.json())
-        .then((newReview) => {
-          setReviewData((prev) => [...prev, newReview]);
+        .then(() => {
+          console.log("서버가 준 데이터:", addNewData);
+          setReviewData((prev) => [...prev, addNewData]);
           nav("/", { replace: true });
         })
         .catch((err) => {
           console.error("Failed to save review", err);
           setReviewData((prev) => [...prev, addNewData]);
-          nav("/", { replace: true });
+          // nav("/", { replace: true });
+          nav("/AllReviews", { replace: true });
         });
     }
   };

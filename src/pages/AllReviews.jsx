@@ -15,6 +15,8 @@ const AllReviews = ({ reviewData }) => {
 
     const sortedData = useReviewList(filteredData, orderType);
 
+    console.log("sortedData", sortedData);
+
     return (
         <div className="allreviews-container">
             <div className="allreviews-header">
